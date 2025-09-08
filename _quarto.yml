@@ -3,22 +3,33 @@ project:
   output-dir: docs
 
 website:
-  title: "Sydney Informatics Hub Course name"
-  navbar:
-    background: primary
-    left:
+  title: "DGX Cluster Onboarding Guide"
+  # navbar:
+  sidebar:
+    style: "docked"
+    background: white
+    search: true
+    contents:
       - href: index.qmd
         text: Home
-      - href: setup.html
-        text: "Setup"
-      - text: "Session 1"
-        menu:
-        - text: "Python from ipynb example"
-          href: notebooks/01a-fundamentals.html
-        - text: "R from qmd example"
-          href: notebooks/01b_exampleRcontent.html
-        - text: "Markdown from md example"
-          href: notebooks/01c_exampleMDcontent.html
+      - section: "Getting Started with the DGX Cluster"
+        contents:
+        - text: "Introduction to the DGX Cluster"
+          href: notebooks/00_dgx.html
+      - section: "Getting Started with Run:ai"
+        contents:
+        - text: "Login"
+          href: notebooks/01_login.html
+        - text: "Navigating the User Interface"
+          href: notebooks/02_user_interface.html
+      - section: "How-to Guides"
+        contents:
+        - text: "How to Use the Dashboards"
+          href: notebooks/03_dashboards.html
+        - text: "How to Manage Projects"
+          href: notebooks/04_projects.html
+        - text: "How to Configure Environments"
+          href: notebooks/05_environments.html
   cookie-consent: 
     type: express
     style: simple
@@ -30,12 +41,13 @@ website:
 
 format:
   html:
+   link-external-newwindow: true
+   link-external-icon: true # displays an icon next to external links
    toc: true
    theme:
       light: flatly
-      dark: darkly
-   css: styles.scss
+      # dark: darkly
+  #  css: styles.scss
    code-link: true
    code-fold: false
-
-
+   
