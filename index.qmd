@@ -1,0 +1,88 @@
+---
+title: "Course title"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+---
+
+
+This is a training course aimed at (your target audience) to learn (your course).
+
+
+## Trainers
+
+Have a list of the people delivering the course if it is needed. 
+However, this is subject to change so might be a good idea to not specifiy.
+
+Here's an example list.
+This is a good place to define what your preferred name is if you have one.
+
+* Nathaniel (Nate) Butterworth
+* Darya Vanichkina
+* Kristian Maras
+
+
+## Course pre-requisites and setup requirements
+
+Provide some sort of general description of what you should know and who this course is for. For example: 
+
+> No previous programming experience is required, but **Session 1 is a pre-requisite for the other sessions**. Training will be delivered online, so you will need access to a modern computer with a stable internet connection and around 5GB of storage space for data downloaded prior to the course. Participants are encouraged to setup a Python environment on their local computer (as per the [Setup Instructions](./setup.html) provided), but participation using other platforms/environments can be supported where necessary.
+
+
+## Venue
+
+Specifiy where the training will be, whether it is in person, online, or hybrid.
+
+Include a reminder about the location and time zone in which this course will be running.
+In almost all cases, our courses are delivered from Sydney and times are reported in AEDT (GMT+11).
+
+#### Zoom etiquette and how we interact
+
+Include some sort of descripter about what is expected from attendees in terms of participation, and what sort of interaction they should expect. 
+This could also be moved to an about page. 
+
+Here's an example for a zoom only online course:
+
+> Sessions will be recorded for attendees only, and it is set up to only record the host shared screen and host audio. We will try and get these uploaded to this site as soon as possible. Please interrupt whenever you want! Ideally, have your camera on and interact as much as possible. There will be someone monitoring the chat-window with any questions you would like to post there.  Four hours is a long Zoom session so we have plenty of scheduled breaks combined with a mix of content to be delivered as demos, plus sections as independent exercises, but most of the course will be pretty-hands on with everyone writing their own code. We will use Zoom break-out rooms as needed with the Trainers and participants.
+
+
+## Code of Conduct
+
+As a University of Sydney course, we also want to make sure peopele are aware of our code of conduct.
+Feel free to move this to an about page as needed. 
+
+Example standard Code of Conduct statement: 
+
+We expect all attendees of our training to follow our code of conduct, including bullying, harassment and discrimination prevention policies.
+
+In order to foster a positive and professional learning environment we encourage the following kinds of behaviours at all our events and on our platforms:
+
+* Use welcoming and inclusive language
+* Be respectful of different viewpoints and experiences
+* Gracefully accept constructive criticism
+* Focus on what is best for the community
+* Show courtesy and respect towards other community members
+
+Our full CoC, with incident reporting guidelines, is available [here]https://sydney-informatics-hub.github.io/codeofconduct/).
+
+
+
+## Schedule
+
+If your training includes multiple components, it is always nice to have a table with the schedule.
+With quarto we can make tables using markdown formating, like below.
+
+|  |  |
+| --- | :--- |
+| **Day 1** |
+| Morning | [Fundamentals](notebooks/01a-fundamentals.ipynb) |
+|   | [Example R Content](notebooks/01b_exampleRcontent.qmd) |
+| **Day 2** |
+| Morning | [Example MD Content](notebooks/01c_exampleMDcontent.md) |
+
+## Setup Instructions
+
+Link to the setup instructions if there are any, for example:
+
+> Please complete the [Setup Instructions](./setup.html) **before the course**. If you have any trouble, please get in contact with us ASAP.

@@ -1,0 +1,103 @@
+# Sample R lesson
+
+::: callout-tip
+## Challenge 1
+How can we make our lessons a bit more interactive??
+:::
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+Here's some markdown code showing how to use markdown to do cool things in our quarto markdowns.
+
+```markdown
+
+::: callout-tip
+## Challenge 1
+How can we make our lessons a bit more interactive??
+:::
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+We can take advantage of cool markdown!
+
+:::
+
+```
+
+:::
+
+You can define sections in your quarto using html.
+
+```html
+<div class="questions">
+</div>
+```
+
+<div class="questions">
+
+### Questions
+
+- What can R do?
+- How do I do it?
+</div>
+
+<div class="objectives">
+  
+### Objectives
+
+- Learn the basic R commands
+
+</div>
+
+
+```{r}
+# if using VSCode may been
+#install.packages("languageserver")
+hist(mtcars$mpg)
+```
+
+
+<div class="challenge">
+
+### Challenge 
+
+Write a function to convert map scale. For example, on a 1:25,000 map (good for hiking!) the distance between two points is 15 cm. How far apart are these in real life? (3750 m).
+
+[Reminder: 15 cm * 25000 = 375000 cm = 3750 m]
+
+Your function should take as input two numbers:  the distance on the map (in cm) and the second number of the scale and, i.e. `calculate_distance(15, 25000)` should return 375000
+
+<details>
+<summary>Solution</summary>
+
+```r
+#Declare the name of the function
+# this is not a R example - but you get the idea!
+def calculate_distance(distance_cm,scale):
+    '''calculates distance based on map and scale
+    returns: z
+    inputs: distance_cm,scale
+    distance_cm and scale are two integers
+    returns the product of distance_cm and scale
+    '''  
+    
+    return(distance_cm * scale)
+```
+</details>
+</div>
+
+
+
+<div class="keypoints">
+
+### Key points
+
+- You can store things in R in variables
+- Lists can be used to store objects of different types
+- Loops with for can be used to iterate over each object in a list
+- Functions are used to write (and debug) repetitive code once
+- Indexing
+
+</div>
