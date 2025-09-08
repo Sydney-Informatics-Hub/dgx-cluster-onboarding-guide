@@ -1,24 +1,12 @@
 [
   {
-    "objectID": "notebooks/02_user_interface.html",
-    "href": "notebooks/02_user_interface.html",
-    "title": "Navigating the User Interface",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DGX Cluster Onboarding Guide",
     "section": "",
-    "text": "Navigating the User Interface\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Note\n\n\n\nThe DGX Cluster is managed by the Sydney Informatics Hub at the University of Sydney. Contact sih.info@sydney.edu.au for more questions.\n\n\n\n\n\nSection\nContent\n\n\nGetting Started with the DGX Cluster\nDGX/GPU fundamentals\n\n\nGetting Started with Run:ai\nRun:ai fundamentals\n\n\nHow-to Guide\nProvide step-by-step instructions\n\n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
     "crumbs": [
-      "Getting Started with Run:ai",
-      "Navigating the User Interface"
-    ]
-  },
-  {
-    "objectID": "notebooks/05_environments.html",
-    "href": "notebooks/05_environments.html",
-    "title": "How to Configure Environments",
-    "section": "",
-    "text": "How to Configure Environments\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
-    "crumbs": [
-      "How-to Guides",
-      "How to Configure Environments"
+      "Home"
     ]
   },
   {
@@ -33,31 +21,14 @@
     ]
   },
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
+    "objectID": "notebooks/01_login.html",
+    "href": "notebooks/01_login.html",
+    "title": "Login",
     "section": "",
-    "text": "1. Get a client\nThese are the setup instructions…\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DGX Cluster Onboarding Guide",
-    "section": "",
-    "text": "Note\n\n\n\nThe DGX Cluster is managed by the Sydney Informatics Hub at the University of Sydney. Contact sih.info@sydney.edu.au for more questions.\n\n\n\n\n\nSection\nContent\n\n\nGetting Started with the DGX Cluster\nDGX/GPU fundamentals\n\n\nGetting Started with Run:ai\nRun:ai fundamentals\n\n\nHow-to Guide\nProvide step-by-step instructions\n\n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Login\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
     "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "notebooks/04_projects.html",
-    "href": "notebooks/04_projects.html",
-    "title": "How to Manage Projects",
-    "section": "",
-    "text": "How to Manage Projects\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
-    "crumbs": [
-      "How-to Guides",
-      "How to Manage Projects"
+      "Getting Started with Run:ai",
+      "Login"
     ]
   },
   {
@@ -72,14 +43,43 @@
     ]
   },
   {
-    "objectID": "notebooks/01_login.html",
-    "href": "notebooks/01_login.html",
-    "title": "Login",
+    "objectID": "notebooks/02_user_interface.html",
+    "href": "notebooks/02_user_interface.html",
+    "title": "Navigating the User Interface",
     "section": "",
-    "text": "Login\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Navigating the User Interface\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
     "crumbs": [
       "Getting Started with Run:ai",
-      "Login"
+      "Navigating the User Interface"
     ]
+  },
+  {
+    "objectID": "notebooks/04_projects.html",
+    "href": "notebooks/04_projects.html",
+    "title": "How to Manage Projects",
+    "section": "",
+    "text": "How to Manage Projects\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "crumbs": [
+      "How-to Guides",
+      "How to Manage Projects"
+    ]
+  },
+  {
+    "objectID": "notebooks/05_environments.html",
+    "href": "notebooks/05_environments.html",
+    "title": "How to Configure Environments",
+    "section": "",
+    "text": "How to Configure Environments\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "crumbs": [
+      "How-to Guides",
+      "How to Configure Environments"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
+    "section": "",
+    "text": "1. Get a client\nThese are the setup instructions…\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   }
 ]
