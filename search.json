@@ -25,7 +25,7 @@
     "href": "notebooks/01_login.html",
     "title": "Login",
     "section": "",
-    "text": "Login\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Login\n\nGo to: https://gpu.sydney.edu.au/. If you are not on the Sydney university network (e.g. working from home), you will need to connect to the VPN to see the login page. \nClick “CONTINUE WITH SSO”. This will prompt you to use Okta to authenticate your login. Once the login is successful, you’ll be presented with the landing (“Workloads”) page. \n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
     "crumbs": [
       "Getting Started with Run:ai",
       "Login"
