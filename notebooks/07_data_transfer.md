@@ -18,7 +18,7 @@ To run the `interactive_dt` environment from a template:
 
 3. Select your project from the projects available and select the `interactive-data-transfer` template and give your workspace a name before clicking with your mouse cursor on CONTINUE.
 
-4. If you selected the `interactive-data-transfer` template you should now have pre-populated the required `interactive-dt` environment and the `data-transfer` compute resource fields on the following page. You can double check this now.
+4. If you have selected the `interactive-data-transfer` template, you should now have pre-populated the required `interactive-dt` environment and the `data-transfer` compute resource fields on the following page. You can double check this now.
 
 5. Expand the `Data sources` box and select the PVC associated with your project from the list.
 
@@ -54,9 +54,9 @@ Be sure to replace everything in brackets `<` `>` with values specific to the da
 rsync -avcP <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> <pvc_mount_point>/<path_to_pvc_data>
 ```
 
-When you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS. 
+After you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS. 
 
-To copy data from the DGX to RDS, you just reverse the order of source and destination in the above command:
+To copy data from the DGX to RDS, reverse the order of source and destination in the above command:
 
 ```bash
 rsync -avcP <pvc_mount_point>/<path_to_pvc_data> <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> 
