@@ -24,7 +24,7 @@ To run the `interactive_dt` environment from a template:
 
 ![Data Sources](../fig/data_sources.png)
 
-6. When you are happy everything is in order, click CREATE WORKSPACE and your data transfer environment will be created. When this is provisioned click the CONNECT icon above the list of workloads. 
+6. When you are happy with everything, click CREATE WORKSPACE and your data transfer environment will be created. When this is provisioned click the CONNECT icon above the list of workloads. 
 
 ![Connect](../fig/connect_jupyterlab.png)
 
