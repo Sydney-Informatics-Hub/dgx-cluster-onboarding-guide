@@ -16,4 +16,4 @@
 
 ## How to View changes
 
-Pull the repo, change to the relevant branch and use `quarto preview` to view the marked-up version of the text.
+Pull the repo, change to the relevant branch and use `quarto preview` to view the marked-up version of the text in a browser window.
