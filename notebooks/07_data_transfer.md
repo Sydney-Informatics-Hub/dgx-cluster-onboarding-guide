@@ -2,7 +2,7 @@
 
 In this section we will describe methods of transferring data between the Research Data Store (RDS) and Gadi. For now, while we await the implementation of [Globus](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/3492052996/Globus+Data+Transfer) for fast and efficient transfer to and from your Persistent Volume Claim (PVC), we will describe an interactive method for transferring data using a JupyterLab environment in the Run:ai web interface. In the future we will include instructions for copying data using the Run:AI CLI at the command line.
 
-Here we assume you already have set up a [project](04_projects.md) and have some PVC [storage](06_storage.md) available.
+Here we assume you already have set up a [project](04_projects.md) and have some Persistent Volume Claim (PVC) [storage](06_storage.md) available.
 
 ## Interactive data transfer to/from RDS from a web-browser
 
