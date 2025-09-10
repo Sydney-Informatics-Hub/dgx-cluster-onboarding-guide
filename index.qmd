@@ -16,4 +16,4 @@ The DGX Cluster is managed by the [Sydney Informatics Hub](https://www.sydney.ed
 | **Section** | **Content** |
 | Getting Started with the DGX Cluster | DGX/GPU fundamentals |
 | Getting Started with Run:ai | Run:ai fundamentals |
-| How-to Guide | Provide step-by-step instructions |
+| How-to Guides | Provide step-by-step instructions |
