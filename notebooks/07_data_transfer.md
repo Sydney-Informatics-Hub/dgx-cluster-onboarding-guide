@@ -10,7 +10,7 @@ You can easily transfer data between your Persistent Volume Claim (PVC) and RDS 
 
 To run the `interactive_dt` environment from a template:
 
-1. Log into the Run:ai dashboard at [gpu.sydney.edu.au](https://gpu.sydney.edu.au) and use okta to login with your credentials.
+1. Log into the Run:ai dashboard at [gpu.sydney.edu.au](https://gpu.sydney.edu.au) and use Okta to login with your credentials via the "CONTINUE WITH SSO" sign in option.
 
 2. Click 'workloads' in the left panel and then the blue 'new workload' icon in the top left of the workloads screen and select 'workspace'.
 
