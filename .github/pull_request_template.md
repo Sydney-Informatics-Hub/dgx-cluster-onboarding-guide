@@ -14,6 +14,6 @@
 - [ ] All links and references work correctly
 - [ ] (If adding a new section) Navigation panel has been updated
 
-## How to View changes
+## How to View Changes
 
 Pull the repo, change to the relevant branch and use `quarto preview` to view the marked-up version of the text in a browser window.
