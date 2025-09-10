@@ -4,6 +4,7 @@ project:
 
 website:
   title: "DGX Cluster Onboarding Guide"
+  site-url: https://sydney-informatics-hub.github.io/
   # navbar:
   sidebar:
     style: "docked"
