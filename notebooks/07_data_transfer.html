@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – DGX Cluster Onboarding Guide</title>
+<title>data_transfer – DGX Cluster Onboarding Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7cf22eaa24fbdd3c47ce0ba7a9e3ed7d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7cf22eaa24fbdd3c47ce0ba7a9e3ed7d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,9 +145,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      DGX Cluster Onboarding Guide
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/03_dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/07_data_transfer.html">How to transfer data to/from the DGX Cluster</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -127,7 +160,7 @@ cookieconsent.run({
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">DGX Cluster Onboarding Guide</a> 
+      <a href="../">DGX Cluster Onboarding Guide</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -139,7 +172,7 @@ cookieconsent.run({
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -154,7 +187,7 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/00_dgx.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/00_dgx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to the DGX Cluster</span></a>
   </div>
 </li>
@@ -171,13 +204,13 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/01_login.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/01_login.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Login</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/02_user_interface.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/02_user_interface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Navigating the User Interface</span></a>
   </div>
 </li>
@@ -194,25 +227,25 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/03_dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/03_dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Use the Dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/04_projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/04_projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Manage Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/05_environments.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/05_environments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Configure Environments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/07_data_transfer.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/07_data_transfer.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">How to transfer data to/from the DGX Cluster</span></a>
   </div>
 </li>
@@ -228,37 +261,119 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#get-a-client" id="toc-get-a-client" class="nav-link active" data-scroll-target="#get-a-client">1. Get a client</a></li>
+  <li><a href="#how-to-transfer-data-to-and-from-the-persistent-volume-claim" id="toc-how-to-transfer-data-to-and-from-the-persistent-volume-claim" class="nav-link active" data-scroll-target="#how-to-transfer-data-to-and-from-the-persistent-volume-claim">How to transfer data to and from the Persistent volume claim</a>
+  <ul class="collapse">
+  <li><a href="#interactive-data-transfer-tofrom-rds-from-a-web-browser" id="toc-interactive-data-transfer-tofrom-rds-from-a-web-browser" class="nav-link" data-scroll-target="#interactive-data-transfer-tofrom-rds-from-a-web-browser">Interactive data transfer to/from RDS from a web-browser</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/03_dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/07_data_transfer.html">How to transfer data to/from the DGX Cluster</a></li></ol></nav></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Setup</h1>
+
+
+
+<section id="how-to-transfer-data-to-and-from-the-persistent-volume-claim" class="level1">
+<h1>How to transfer data to and from the Persistent volume claim</h1>
+<p>In this section we will describe methods of transferring data between the Research Data Store (RDS) and Gadi. For now, while we await the implementation of <a href="https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/3492052996/Globus+Data+Transfer">Globus</a> for fast and efficient transfer to and from your Persistent Volume Claim (PVC), we will describe an interactive method for transferring data using a JupyterLab environment in the Run:ai web interface. In the future we will include instructions for copying data using the Run:AI CLI at the command line.</p>
+<p>Here we assume you already have set up a <a href="../notebooks/04_projects.html">project</a> and have some Persistent Volume Claim (PVC) <a href="../notebooks/06_storage.html">storage</a> available.</p>
+<section id="interactive-data-transfer-tofrom-rds-from-a-web-browser" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-data-transfer-tofrom-rds-from-a-web-browser">Interactive data transfer to/from RDS from a web-browser</h2>
+<p>You can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an <a href="../notebooks/05_environments.html">environment</a> called <code>interactive_dt</code> for you to do this.</p>
+<p>To run the <code>interactive_dt</code> environment from a template:</p>
+<ol type="1">
+<li><p>Log into the Run:ai dashboard at <a href="https://gpu.sydney.edu.au">gpu.sydney.edu.au</a> and use Okta to login with your credentials via the “CONTINUE WITH SSO” sign in option.</p></li>
+<li><p>Click ‘workloads’ in the left panel and then the blue ‘new workload’ icon in the top left of the workloads screen and select ‘workspace’.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/workload_new.png" class="img-fluid figure-img"></p>
+<figcaption>New Workload</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><p>Select your project from the projects available and select the <code>interactive-data-transfer</code> template and give your workspace a name before clicking with your mouse cursor on CONTINUE.</p></li>
+<li><p>If you have selected the <code>interactive-data-transfer</code> template, you should now have pre-populated the required <code>interactive-dt</code> environment and the <code>data-transfer</code> compute resource fields on the following page. You can double check this now.</p></li>
+<li><p>Expand the <code>Data sources</code> box and select the PVC associated with your project from the list.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/data_sources.png" class="img-fluid figure-img"></p>
+<figcaption>Data Sources</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>When you are happy with everything, click CREATE WORKSPACE and your data transfer environment will be created. When this is provisioned click the CONNECT icon above the list of workloads.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/connect_jupyterlab.png" class="img-fluid figure-img"></p>
+<figcaption>Connect</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>You will again be prompted for your Run:ai login and your newly created JupyterLab session will appear in a new tab in your browser. Select the ‘Terminal’ app there.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/terminal_jupyterlab.png" class="img-fluid figure-img"></p>
+<figcaption>Terminal</figcaption>
+</figure>
+</div>
+<ol start="8" type="1">
+<li>In the open terminal app you can now use the rsync command to copy data to/from your project space in RDS.</li>
+</ol>
+<p>To copy data from RDS to the DGX, you can type the following into the open terminal:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be sure to replace everything in brackets <code>&lt;</code> <code>&gt;</code> with values specific to the data you are trying to copy as follows:</p>
+<p><code>&lt;your_unikey&gt;</code>: Your University of Sydney unikey, usually in the form abcd0123.</p>
+<p><code>&lt;rds_project&gt;</code>: The name of the project you have on <a href="https://dashr.sydney.edu.au/">DashR</a> with data stored in RDS.</p>
+<p><code>&lt;path_to_project_data&gt;</code>: The location of your storage directory under your project on RDS. (e.g.&nbsp;<code>my_project_data/my_project_data_for_dgx/</code>)</p>
+<p><code>&lt;pvc_mount_point&gt;</code>: The location your PVC has been mounted (this is established when your PVC is provisioned). (e.g.&nbsp;<code>/scratch</code>)</p>
+<p><code>&lt;path_to_pvc_data&gt;</code>: The path of the data you have stored on the PVC. (e.g.&nbsp;<code>my_dgx_data/workflow_output/</code>)</p>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avcP</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-int.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>rds_project<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_project_data<span class="op">&gt;</span> <span class="op">&lt;</span>pvc_mount_point<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_pvc_data<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS.</p>
+<p>To copy data from the DGX to RDS, reverse the order of source and destination in the above command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-avcP</span> <span class="op">&lt;</span>pvc_mount_point<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_pvc_data<span class="op">&gt;</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-int.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>rds_project<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_project_data<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The above rsync will also perform integrity checking using a <em>checksum</em>, comparing the original and copied files to make sure they are identical.</p>
+<p>During file transfer, for larger files, you can close the browser and leave things running in the background. You can then reconnect to check its status by logging back into the web UI at <a href="https://gpu.sydney.edu.au">gpu.sydney.edu.au</a>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For early adopters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Until we have correct user IDs and group IDs for your unikey and project set up in the PVC and the running workflow, you will need to update the permissions of the mounted PVC as root to be able to read/write files from there. To do this:</p>
+<ol type="1">
+<li>Change to root</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> su</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Use chmod to set read and write for all on your mounted PVC space</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> <span class="at">-R</span> 666 <span class="op">&lt;</span>PVC_mount_point<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You must do these steps BEFORE running the <code>rsync</code> command above.</p>
+</div>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="get-a-client" class="level1">
-<h1>1. Get a client</h1>
-<p>These are the setup instructions…</p>
-
-
+</section>
 </section>
 
 <p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->
