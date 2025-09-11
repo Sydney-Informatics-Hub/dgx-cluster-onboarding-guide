@@ -238,11 +238,36 @@ cookieconsent.run({
 
 <section id="how-to-configure-environments" class="level1">
 <h1>How to Configure Environments</h1>
+<p>In Run:AI, an environment is a configuration that defines the software setup needed to run your AI workloads. An environment typically includes:</p>
+<ul>
+<li>Base Docker image (e.g., pytorch/pytorch, tensorflow/tensorflow:2.20.0-jupyter)</li>
+<li>Tools (such as Jupyter, RStudio, etc.)</li>
+<li>Custom runtime settings to run scripts or setup commands (e.g., installing extra packages, configuring the base URL, etc.) The DGX platform has provided several environments for users to get started with:</li>
+</ul>
+<ol type="1">
+<li><p>Select “Environments” on the left panel, then click on “NEW ENVIRONMENT” <img src="../fig/environment_new_env.png" class="img-fluid"></p></li>
+<li><p>In the new window, select the right scope in which the new environment should be made available <img src="../fig/environment_scope.png" class="img-fluid"></p></li>
+<li><p>Provide a descriptive name and a simple description to the environment <img src="../fig/environment_name.png" class="img-fluid"></p></li>
+<li><p>Insert the URL of the docker image. In this example, we’re pulling an <a href="https://hub.docker.com/r/rapidsai/notebooks">NVIDIA Rapids docker image</a> from Docker Hub with specific rapids, CUDA, and python versions: rapidsai/notebooks:25.10a-cuda12.0-py3.12 <img src="../fig/environment_image.png" class="img-fluid"></p></li>
+<li><p>Specify the Workload architecture &amp; type depending on the workload you are intending to run. Hovering over the question mark icon to see more explanation on each option <img src="../fig/environment_archetechture.png" class="img-fluid"></p></li>
+<li><p>Select and configure the right tool used to interact with the container. For instance, the below example configures a Jupyter server to run on the 8888 container port: <img src="../fig/environment_tools.png" class="img-fluid"></p></li>
+<li><p>The “Runtime settings” are also critical in correctly configuring the container when it’s up and running. You often can find such information on the container registry, github repo, or by reading through the Dockerfile. In this example, we</p>
+<ol type="a">
+<li>Set the command as jupyter-lab</li>
+<li>enable the remote access of the Jupyter lab (<code>--ServerApp.allow_remote_access=True</code>),</li>
+<li>set up the notebook root directory (<code>--notebook-dir=/home/rapids/notebooks</code>),</li>
+<li>automatically populate the base url (<code>--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}</code>) which is especially important to avoid the conflicts between multiple workloads using Jupyter as the front end entry</li>
+<li>disable the token authentication (<code>--NotebookApp.token=''</code>)</li>
+<li>An additional environment variable is defined to install extra dependencies (click “ENVIRONMENT VARIABLE” then enter Name as EXTRA_PIP_PACKAGES and Value as beautifulsoup4) <img src="../fig/environment_runtime.png" class="img-fluid"></li>
+</ol></li>
+<li><p>Use the default UID and GID from the image <img src="../fig/environment_security.png" class="img-fluid"></p></li>
+<li><p>Finally, select “CREATE ENVIRONMENT” to finish the setup.</p></li>
+</ol>
 
 
 </section>
 
-<p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -315,7 +340,7 @@ cookieconsent.run({
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/Sydney-Informatics-Hub\.github\.io\/dgx-cluster-onboarding-guide\/");
+        var filterRegex = new RegExp("https:\/\/sydney-informatics-hub\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -656,7 +681,7 @@ cookieconsent.run({
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-
+<p>All materials copyright Sydney Informatics Hub, University of Sydney</p>
 <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;

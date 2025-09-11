@@ -226,7 +226,18 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-use-the-dashboards" id="toc-how-to-use-the-dashboards" class="nav-link active" data-scroll-target="#how-to-use-the-dashboards">How to Use the Dashboards</a></li>
+  <li><a href="#how-to-use-the-dashboards" id="toc-how-to-use-the-dashboards" class="nav-link active" data-scroll-target="#how-to-use-the-dashboards">How to Use the Dashboards</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#indicators" id="toc-indicators" class="nav-link" data-scroll-target="#indicators">Indicators</a></li>
+  <li><a href="#cluster-load" id="toc-cluster-load" class="nav-link" data-scroll-target="#cluster-load">Cluster Load</a></li>
+  <li><a href="#queueing" id="toc-queueing" class="nav-link" data-scroll-target="#queueing">Queueing</a></li>
+  <li><a href="#idle-gpus" id="toc-idle-gpus" class="nav-link" data-scroll-target="#idle-gpus">Idle GPUs</a></li>
+  <li><a href="#running-workloads" id="toc-running-workloads" class="nav-link" data-scroll-target="#running-workloads">Running Workloads</a></li>
+  </ul></li>
+  <li><a href="#analytics" id="toc-analytics" class="nav-link" data-scroll-target="#analytics">Analytics</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,11 +249,49 @@ cookieconsent.run({
 
 <section id="how-to-use-the-dashboards" class="level1">
 <h1>How to Use the Dashboards</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This dashboard view provides holistic infrastructure information useful for both researchers and system administrators in managing and planning the resources.</p>
+<section id="indicators" class="level3">
+<h3 class="anchored" data-anchor-id="indicators">Indicators</h3>
+<p>This section presents high-level statistics of the GPU computing resources <img src="../fig/dashboards_overview_indicators.png" class="img-fluid"></p>
+</section>
+<section id="cluster-load" class="level3">
+<h3 class="anchored" data-anchor-id="cluster-load">Cluster Load</h3>
+<p>Real-time monitoring of the cluster status in terms of GPU and CPU utilisation. <img src="../fig/dashboards_overview_clusterload.png" class="img-fluid"></p>
+</section>
+<section id="queueing" class="level3">
+<h3 class="anchored" data-anchor-id="queueing">Queueing</h3>
+<p>Inspecting all queueing jobs. Possible reasons why jobs are queueing include:</p>
+<ul>
+<li>The number of GPUs requested to be allocated to the job has exceeded the remaining GPUs in the project.</li>
+<li>The job is waiting for other jobs to finish before it can be scheduled. <img src="../fig/dashboards_overview_queueing.png" class="img-fluid"></li>
+</ul>
+</section>
+<section id="idle-gpus" class="level3">
+<h3 class="anchored" data-anchor-id="idle-gpus">Idle GPUs</h3>
+<p>Displaying the number of idle GPUs currently allocated to running workloads. <img src="../fig/dashboards_overview_idleGPUs.png" class="img-fluid"></p>
+</section>
+<section id="running-workloads" class="level3">
+<h3 class="anchored" data-anchor-id="running-workloads">Running Workloads</h3>
+<p>Summary of the list of running workloads. <img src="../fig/dashboards_overview_workloads.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="analytics" class="level2">
+<h2 class="anchored" data-anchor-id="analytics">Analytics</h2>
+<p>This dashboard provides more detailed breakdowns of the DGX running status. Key statistics that are reported at separate levels:</p>
+<ul>
+<li>Cluster</li>
+<li>Project</li>
+<li>Workloads</li>
+<li>Nodes <img src="../fig/dashboards_analytics.png" class="img-fluid"></li>
+</ul>
 
 
 </section>
+</section>
 
-<p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -315,7 +364,7 @@ cookieconsent.run({
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/Sydney-Informatics-Hub\.github\.io\/dgx-cluster-onboarding-guide\/");
+        var filterRegex = new RegExp("https:\/\/sydney-informatics-hub\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -656,7 +705,7 @@ cookieconsent.run({
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-
+<p>All materials copyright Sydney Informatics Hub, University of Sydney</p>
 <div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;

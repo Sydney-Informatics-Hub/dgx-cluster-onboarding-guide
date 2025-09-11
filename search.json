@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "DGX Cluster Onboarding Guide",
     "section": "",
-    "text": "Note\n\n\n\nThe DGX Cluster is managed by the Sydney Informatics Hub at the University of Sydney. Contact sih.info@sydney.edu.au for more questions.\n\n\n\n\n\nSection\nContent\n\n\nGetting Started with the DGX Cluster\nDGX/GPU fundamentals\n\n\nGetting Started with Run:ai\nRun:ai fundamentals\n\n\nHow-to Guide\nProvide step-by-step instructions\n\n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Note\n\n\n\nThe DGX Cluster is managed by the Sydney Informatics Hub at the University of Sydney. Contact sih.info@sydney.edu.au for more questions.\n\n\n\n\n\nSection\nContent\n\n\nGetting Started with the DGX Cluster\nDGX/GPU fundamentals\n\n\nGetting Started with Run:ai\nRun:ai fundamentals\n\n\nHow-to Guides\nProvide step-by-step instructions",
     "crumbs": [
       "Home"
     ]
@@ -14,7 +14,7 @@
     "href": "notebooks/00_dgx.html",
     "title": "Introduction to the DGX Cluster",
     "section": "",
-    "text": "Introduction to the DGX Cluster\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Important\n\n\n\nCOMING SOON! We expect the DGX cluster to be available for researchers to use in October 2025. Stay tuned for updates from the Sydney Informatics Hub!\n\n\n\nIntroduction to the DGX Cluster\nThe DGX Cluster is a high-performance computing (HPC) platform designed to accelerate AI and machine learning workloads. It is built on NVIDIA’s DGX systems, which are purpose-built for deep learning and AI research. The cluster provides researchers with access to powerful GPUs, high-speed networking, and a robust software stack to facilitate development in AI research and scientific simulations.\nMore information about the DGX Cluster can be found on the Sydney Informatics Hub’s Research Computing page.\n\n\nExpressions of Interest\nThe DGX Cluster is currently in its final stages of deployment and is expected to be available for researchers to use in October 2025. If you are interested in using the DGX Cluster for your research projects, please express your interest by filling out the Expression of Interest Form. This will help us gauge demand and plan for user onboarding and support.",
     "crumbs": [
       "Getting Started with the DGX Cluster",
       "Introduction to the DGX Cluster"
@@ -25,7 +25,7 @@
     "href": "notebooks/01_login.html",
     "title": "Login",
     "section": "",
-    "text": "Login\n\nGo to: https://gpu.sydney.edu.au/. If you are not on the Sydney university network (e.g. working from home), you will need to connect to the VPN to see the login page. \nClick “CONTINUE WITH SSO”. This will prompt you to use Okta to authenticate your login. Once the login is successful, you’ll be presented with the landing (“Workloads”) page. \n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Login\n\nGo to: https://gpu.sydney.edu.au/. If you are not on the Sydney university network (e.g. working from home), you will need to connect to the VPN to see the login page. \nClick “CONTINUE WITH SSO”. This will prompt you to use Okta to authenticate your login. Once the login is successful, you’ll be presented with the landing (“Workloads”) page.",
     "crumbs": [
       "Getting Started with Run:ai",
       "Login"
@@ -36,14 +36,14 @@
     "href": "notebooks/06_storage.html",
     "title": "How to manage the persistent volume claim",
     "section": "",
-    "text": "How to manage the persistent volume claim\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "How to manage the persistent volume claim"
   },
   {
     "objectID": "notebooks/07_data_transfer.html",
     "href": "notebooks/07_data_transfer.html",
     "title": "How to transfer data to and from the Persistent volume claim",
     "section": "",
-    "text": "In this section we will describe methods of transferring data between the Research Data Store (RDS) and Gadi. For now, while we await the implementation of Globus for fast and efficient transfer to and from your Persistent Volume Claim (PVC), we will describe an interactive method for transferring data using a JupyterLab environment in the Run:ai web interface. In the future we will include instructions for copying data using the Run:AI CLI at the command line.\nHere we assume you already have set up a project and have some Persistent Volume Claim (PVC) storage available.\n\n\nYou can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an environment called interactive_dt for you to do this.\nTo run the interactive_dt environment from a template:\n\nLog into the Run:ai dashboard at gpu.sydney.edu.au and use Okta to login with your credentials via the “CONTINUE WITH SSO” sign in option.\nClick ‘workloads’ in the left panel and then the blue ‘new workload’ icon in the top left of the workloads screen and select ‘workspace’.\n\n\n\n\nNew Workload\n\n\n\nSelect your project from the projects available and select the interactive-data-transfer template and give your workspace a name before clicking with your mouse cursor on CONTINUE.\nIf you have selected the interactive-data-transfer template, you should now have pre-populated the required interactive-dt environment and the data-transfer compute resource fields on the following page. You can double check this now.\nExpand the Data sources box and select the PVC associated with your project from the list.\n\n\n\n\nData Sources\n\n\n\nWhen you are happy with everything, click CREATE WORKSPACE and your data transfer environment will be created. When this is provisioned click the CONNECT icon above the list of workloads.\n\n\n\n\nConnect\n\n\n\nYou will again be prompted for your Run:ai login and your newly created JupyterLab session will appear in a new tab in your browser. Select the ‘Terminal’ app there.\n\n\n\n\nTerminal\n\n\n\nIn the open terminal app you can now use the rsync command to copy data to/from your project space in RDS.\n\nTo copy data from RDS to the DGX, you can type the following into the open terminal:\n\n\n\n\n\n\nNote\n\n\n\nBe sure to replace everything in brackets &lt; &gt; with values specific to the data you are trying to copy as follows:\n&lt;your_unikey&gt;: Your University of Sydney unikey, usually in the form abcd0123.\n&lt;rds_project&gt;: The name of the project you have on DashR with data stored in RDS.\n&lt;path_to_project_data&gt;: The location of your storage directory under your project on RDS. (e.g. my_project_data/my_project_data_for_dgx/)\n&lt;pvc_mount_point&gt;: The location your PVC has been mounted (this is established when your PVC is provisioned). (e.g. /scratch)\n&lt;path_to_pvc_data&gt;: The path of the data you have stored on the PVC. (e.g. my_dgx_data/workflow_output/)\n\n\nrsync -avcP &lt;your_unikey&gt;@research-data-int.sydney.edu.au:/rds/PRJ-&lt;rds_project&gt;/&lt;path_to_project_data&gt; &lt;pvc_mount_point&gt;/&lt;path_to_pvc_data&gt;\nAfter you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS.\nTo copy data from the DGX to RDS, reverse the order of source and destination in the above command:\nrsync -avcP &lt;pvc_mount_point&gt;/&lt;path_to_pvc_data&gt; &lt;your_unikey&gt;@research-data-int.sydney.edu.au:/rds/PRJ-&lt;rds_project&gt;/&lt;path_to_project_data&gt; \nThe above rsync will also perform integrity checking using a checksum, comparing the original and copied files to make sure they are identical.\nDuring file transfer, for larger files, you can close the browser and leave things running in the background. You can then reconnect to check its status by logging back into the web UI at gpu.sydney.edu.au.\n\n\n\n\n\n\nFor early adopters\n\n\n\nUntil we have correct user IDs and group IDs for your unikey and project set up in the PVC and the running workflow, you will need to update the permissions of the mounted PVC as root to be able to read/write files from there. To do this:\n\nChange to root\n\nsudo su\n\nUse chmod to set read and write for all on your mounted PVC space\n\nchmod -R 666 &lt;PVC_mount_point&gt;\nYou must do these steps BEFORE running the rsync command above.\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "In this section we will describe methods of transferring data between the Research Data Store (RDS) and Gadi. For now, while we await the implementation of Globus for fast and efficient transfer to and from your Persistent Volume Claim (PVC), we will describe an interactive method for transferring data using a JupyterLab environment in the Run:ai web interface. In the future we will include instructions for copying data using the Run:AI CLI at the command line.\nHere we assume you already have set up a project and have some Persistent Volume Claim (PVC) storage available.\n\n\nYou can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an environment called interactive_dt for you to do this.\nTo run the interactive_dt environment from a template:\n\nLog into the Run:ai dashboard at gpu.sydney.edu.au and use Okta to login with your credentials via the “CONTINUE WITH SSO” sign in option.\nClick ‘workloads’ in the left panel and then the blue ‘new workload’ icon in the top left of the workloads screen and select ‘workspace’.\n\n\n\n\nNew Workload\n\n\n\nSelect your project from the projects available and select the interactive-data-transfer template and give your workspace a name before clicking with your mouse cursor on CONTINUE.\nIf you have selected the interactive-data-transfer template, you should now have pre-populated the required interactive-dt environment and the data-transfer compute resource fields on the following page. You can double check this now.\nExpand the Data sources box and select the PVC associated with your project from the list.\n\n\n\n\nData Sources\n\n\n\nWhen you are happy with everything, click CREATE WORKSPACE and your data transfer environment will be created. When this is provisioned click the CONNECT icon above the list of workloads.\n\n\n\n\nConnect\n\n\n\nYou will again be prompted for your Run:ai login and your newly created JupyterLab session will appear in a new tab in your browser. Select the ‘Terminal’ app there.\n\n\n\n\nTerminal\n\n\n\nIn the open terminal app you can now use the rsync command to copy data to/from your project space in RDS.\n\nTo copy data from RDS to the DGX, you can type the following into the open terminal:\n\n\n\n\n\n\nNote\n\n\n\nBe sure to replace everything in brackets &lt; &gt; with values specific to the data you are trying to copy as follows:\n&lt;your_unikey&gt;: Your University of Sydney unikey, usually in the form abcd0123.\n&lt;rds_project&gt;: The name of the project you have on DashR with data stored in RDS.\n&lt;path_to_project_data&gt;: The location of your storage directory under your project on RDS. (e.g. my_project_data/my_project_data_for_dgx/)\n&lt;pvc_mount_point&gt;: The location your PVC has been mounted (this is established when your PVC is provisioned). (e.g. /scratch)\n&lt;path_to_pvc_data&gt;: The path of the data you have stored on the PVC. (e.g. my_dgx_data/workflow_output/)\n\n\nrsync -avcP &lt;your_unikey&gt;@research-data-int.sydney.edu.au:/rds/PRJ-&lt;rds_project&gt;/&lt;path_to_project_data&gt; &lt;pvc_mount_point&gt;/&lt;path_to_pvc_data&gt;\nAfter you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS.\nTo copy data from the DGX to RDS, reverse the order of source and destination in the above command:\nrsync -avcP &lt;pvc_mount_point&gt;/&lt;path_to_pvc_data&gt; &lt;your_unikey&gt;@research-data-int.sydney.edu.au:/rds/PRJ-&lt;rds_project&gt;/&lt;path_to_project_data&gt; \nThe above rsync will also perform integrity checking using a checksum, comparing the original and copied files to make sure they are identical.\nDuring file transfer, for larger files, you can close the browser and leave things running in the background. You can then reconnect to check its status by logging back into the web UI at gpu.sydney.edu.au.\n\n\n\n\n\n\nFor early adopters\n\n\n\nUntil we have correct user IDs and group IDs for your unikey and project set up in the PVC and the running workflow, you will need to update the permissions of the mounted PVC as root to be able to read/write files from there. To do this:\n\nChange to root\n\nsudo su\n\nUse chmod to set read and write for all on your mounted PVC space\n\nchmod -R 666 &lt;PVC_mount_point&gt;\nYou must do these steps BEFORE running the rsync command above.",
     "crumbs": [
       "How-to Guides",
       "How to transfer data to/from the DGX Cluster"
@@ -65,7 +65,7 @@
     "href": "notebooks/02_user_interface.html",
     "title": "Navigating the User Interface",
     "section": "",
-    "text": "Navigating the User Interface\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "Navigating the User Interface\n On the left panel, there are several options to select:\n\nDashboards: Two system dashboards, namely “Overview” and “Analytics”, are accessible to users. They provide both system- and project-level information including system summaries, real-time resource allocation, cluster load, etc.\nProjects: This lists out the projects the user has been assigned to.\nWorkloads: This page provides a summary of the current workloads and allows users to create and configure new workloads.\nEnvironments: Both platform-wide and customised environments can be found in this page.\nData Sources: This page allows users to configure new data sources and view existing ones.\nCompute Resources: This page summaries all compute resources (similar to choosing the “flavours” in a cloud computing environment) and allows users to create new compute resources for their specific needs.\nTemplates: This feature allows users to manage bespoke templates configured for their specific workloads.\nCredentials: This space allows users to define secrets including access keys, passwords, or other sensitive information essential to the execution of workloads during runtime.",
     "crumbs": [
       "Getting Started with Run:ai",
       "Navigating the User Interface"
@@ -76,7 +76,29 @@
     "href": "notebooks/03_dashboards.html",
     "title": "How to Use the Dashboards",
     "section": "",
-    "text": "How to Use the Dashboards\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "This dashboard view provides holistic infrastructure information useful for both researchers and system administrators in managing and planning the resources.\n\n\nThis section presents high-level statistics of the GPU computing resources \n\n\n\nReal-time monitoring of the cluster status in terms of GPU and CPU utilisation. \n\n\n\nInspecting all queueing jobs. Possible reasons why jobs are queueing include:\n\nThe number of GPUs requested to be allocated to the job has exceeded the remaining GPUs in the project.\nThe job is waiting for other jobs to finish before it can be scheduled. \n\n\n\n\nDisplaying the number of idle GPUs currently allocated to running workloads. \n\n\n\nSummary of the list of running workloads. \n\n\n\n\nThis dashboard provides more detailed breakdowns of the DGX running status. Key statistics that are reported at separate levels:\n\nCluster\nProject\nWorkloads\nNodes",
+    "crumbs": [
+      "How-to Guides",
+      "How to Use the Dashboards"
+    ]
+  },
+  {
+    "objectID": "notebooks/03_dashboards.html#overview",
+    "href": "notebooks/03_dashboards.html#overview",
+    "title": "How to Use the Dashboards",
+    "section": "",
+    "text": "This dashboard view provides holistic infrastructure information useful for both researchers and system administrators in managing and planning the resources.\n\n\nThis section presents high-level statistics of the GPU computing resources \n\n\n\nReal-time monitoring of the cluster status in terms of GPU and CPU utilisation. \n\n\n\nInspecting all queueing jobs. Possible reasons why jobs are queueing include:\n\nThe number of GPUs requested to be allocated to the job has exceeded the remaining GPUs in the project.\nThe job is waiting for other jobs to finish before it can be scheduled. \n\n\n\n\nDisplaying the number of idle GPUs currently allocated to running workloads. \n\n\n\nSummary of the list of running workloads.",
+    "crumbs": [
+      "How-to Guides",
+      "How to Use the Dashboards"
+    ]
+  },
+  {
+    "objectID": "notebooks/03_dashboards.html#analytics",
+    "href": "notebooks/03_dashboards.html#analytics",
+    "title": "How to Use the Dashboards",
+    "section": "",
+    "text": "This dashboard provides more detailed breakdowns of the DGX running status. Key statistics that are reported at separate levels:\n\nCluster\nProject\nWorkloads\nNodes",
     "crumbs": [
       "How-to Guides",
       "How to Use the Dashboards"
@@ -87,7 +109,7 @@
     "href": "notebooks/04_projects.html",
     "title": "How to Manage Projects",
     "section": "",
-    "text": "How to Manage Projects\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "How to Manage Projects\n\n\n\n\n\n\nNote\n\n\n\nTHIS SECTION IS PENDING ON DUE TO ONGOING DEVELOPMENT RELATED TO USER AUTHENTICATION BY THE USYD ICT IDENTITY TEAM.\n\n\nOnce users are granted access to the DGX cluster, projects are created in Run:ai to align with their DashR projects.",
     "crumbs": [
       "How-to Guides",
       "How to Manage Projects"
@@ -98,7 +120,7 @@
     "href": "notebooks/05_environments.html",
     "title": "How to Configure Environments",
     "section": "",
-    "text": "How to Configure Environments\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney",
+    "text": "How to Configure Environments\nIn Run:AI, an environment is a configuration that defines the software setup needed to run your AI workloads. An environment typically includes:\n\nBase Docker image (e.g., pytorch/pytorch, tensorflow/tensorflow:2.20.0-jupyter)\nTools (such as Jupyter, RStudio, etc.)\nCustom runtime settings to run scripts or setup commands (e.g., installing extra packages, configuring the base URL, etc.) The DGX platform has provided several environments for users to get started with:\n\n\nSelect “Environments” on the left panel, then click on “NEW ENVIRONMENT” \nIn the new window, select the right scope in which the new environment should be made available \nProvide a descriptive name and a simple description to the environment \nInsert the URL of the docker image. In this example, we’re pulling an NVIDIA Rapids docker image from Docker Hub with specific rapids, CUDA, and python versions: rapidsai/notebooks:25.10a-cuda12.0-py3.12 \nSpecify the Workload architecture & type depending on the workload you are intending to run. Hovering over the question mark icon to see more explanation on each option \nSelect and configure the right tool used to interact with the container. For instance, the below example configures a Jupyter server to run on the 8888 container port: \nThe “Runtime settings” are also critical in correctly configuring the container when it’s up and running. You often can find such information on the container registry, github repo, or by reading through the Dockerfile. In this example, we\n\nSet the command as jupyter-lab\nenable the remote access of the Jupyter lab (--ServerApp.allow_remote_access=True),\nset up the notebook root directory (--notebook-dir=/home/rapids/notebooks),\nautomatically populate the base url (--NotebookApp.base_url=/${RUNAI_PROJECT}/${RUNAI_JOB_NAME}) which is especially important to avoid the conflicts between multiple workloads using Jupyter as the front end entry\ndisable the token authentication (--NotebookApp.token='')\nAn additional environment variable is defined to install extra dependencies (click “ENVIRONMENT VARIABLE” then enter Name as EXTRA_PIP_PACKAGES and Value as beautifulsoup4) \n\nUse the default UID and GID from the image \nFinally, select “CREATE ENVIRONMENT” to finish the setup.",
     "crumbs": [
       "How-to Guides",
       "How to Configure Environments"
@@ -109,6 +131,6 @@
     "href": "setup.html",
     "title": "Setup",
     "section": "",
-    "text": "1. Get a client\nThese are the setup instructions…\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "1. Get a client\nThese are the setup instructions…"
   }
 ]
