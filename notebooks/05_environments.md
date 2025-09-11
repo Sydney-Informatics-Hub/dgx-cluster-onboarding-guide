@@ -37,4 +37,4 @@ The DGX platform has provided several environments for users to get started with
 8. Use the default UID and GID from the image
 ![](../fig/environment_security.png)
 
-9. Finally, select “CRATE ENVIRONMENT” to finish the setup.
+9. Finally, select “CREATE ENVIRONMENT” to finish the setup.
