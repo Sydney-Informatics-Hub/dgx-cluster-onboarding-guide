@@ -7,12 +7,15 @@
 - Change 1
 - Change 2
 - ...
+---
 
 ## Checklist
 
-- [ ] The spelling and grammar have been checked
-- [ ] All links and references work correctly
-- [ ] (If adding a new section) Navigation panel has been updated
+- [ ] My changes build successfully with **Quarto** (`quarto preview` or `quarto render`)  
+- [ ] No broken links (`quarto check`)
+- [ ] Screenshots or diagrams updated (if applicable)  
+- [ ] Documented any new files in `_quarto.yml` or relevant index pages  
+---
 
 ## How to View Changes
 
