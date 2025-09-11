@@ -12,20 +12,11 @@
 ## Checklist
 
 - [ ] My changes build successfully with **Quarto** (`quarto preview` or `quarto render`)  
-- [ ] No broken links (`quarto check`)  
-- [ ] Follows style guide (headings, code blocks, figures, etc.)  
-- [ ] Content is clear and accurate  
+- [ ] No broken links (`quarto check`)
 - [ ] Screenshots or diagrams updated (if applicable)  
 - [ ] Documented any new files in `_quarto.yml` or relevant index pages  
-- [ ] Added references or citations if required  
 ---
 
-## Screenshots / Preview (if relevant)
-_Please attach screenshots or link to a rendered preview if the changes are visual._
+## How to View Changes
 
----
-
-## Notes for Reviewers
-
-- Anything specific the reviewer should focus on?  
-- Are there sections that need additional feedback?  
+Pull the repo, change to the relevant branch and use `quarto preview` to view the marked-up version of the text in a browser window.
