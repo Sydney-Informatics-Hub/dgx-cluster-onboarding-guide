@@ -51,7 +51,7 @@ Be sure to replace everything in brackets `<` `>` with values specific to the da
 :::
 
 ```bash
-rsync -rlcP <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> <pvc_mount_point>/<path_to_pvc_data>
+rsync -rlctP <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> <pvc_mount_point>/<path_to_pvc_data>
 ```
 
 After you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS. 
@@ -59,7 +59,7 @@ After you execute this command, you will be prompted for the password associated
 To copy data from the DGX to RDS, reverse the order of source and destination in the above command:
 
 ```bash
-rsync -rlcP <pvc_mount_point>/<path_to_pvc_data> <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> 
+rsync -rlctP <pvc_mount_point>/<path_to_pvc_data> <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> 
 ```
 
 The above rsync will also perform integrity checking using a *checksum*, comparing the original and copied files to make sure they are identical.
