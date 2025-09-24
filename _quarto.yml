@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "DGX Cluster Onboarding Guide"
+  title: "Sydney Informatics Hub GPU Cluster Onboarding Guide"
   site-url: https://sydney-informatics-hub.github.io/
   navbar:
     logo: fig/usyd-logo.png
@@ -14,9 +14,9 @@ website:
     contents:
       - href: index.qmd
         text: Home
-      - section: "Getting Started with the DGX Cluster"
+      - section: "Getting Started with the SIH GPU Cluster"
         contents:
-        - text: "Introduction to the DGX Cluster"
+        - text: "Introduction to the SIH GPU Cluster"
           href: notebooks/dgx.html
       - section: "Getting Started with Run:ai"
         contents:
@@ -32,7 +32,7 @@ website:
           href: notebooks/projects.html
         - text: "How to Configure Environments"
           href: notebooks/environments.html
-        - text: "How to transfer data to/from the DGX Cluster"
+        - text: "How to transfer data to/from the SIH GPU Cluster"
           href: notebooks/data_transfer.html
       - section: "Tutorials"
         contents:

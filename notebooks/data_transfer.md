@@ -34,7 +34,7 @@ To run the `interactive_dt` environment from a template:
 
 8. In the open terminal app you can now use the rsync command to copy data to/from your project space in RDS.
 
-To copy data from RDS to the DGX, you can type the following into the open terminal:
+To copy data from RDS to the GPU cluster, you can type the following into the open terminal:
 
 ::: {.callout-note}
 Be sure to replace everything in brackets `<` `>` with values specific to the data you are trying to copy as follows:
@@ -56,7 +56,7 @@ rsync -rlctP <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project
 
 After you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS. 
 
-To copy data from the DGX to RDS, reverse the order of source and destination in the above command:
+To copy data from the GPU cluster to RDS, reverse the order of source and destination in the above command:
 
 ```bash
 rsync -rlctP <pvc_mount_point>/<path_to_pvc_data> <your_unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<rds_project>/<path_to_project_data> 

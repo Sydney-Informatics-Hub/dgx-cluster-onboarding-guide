@@ -26,7 +26,7 @@ Summary of the list of running workloads.
 ![](../fig/dashboards_overview_workloads.png)
 
 ## Analytics
-This dashboard provides more detailed breakdowns of the DGX running status. Key
+This dashboard provides more detailed breakdowns of the SIH GPU running status. Key
 statistics that are reported at separate levels:
 
 - Cluster
