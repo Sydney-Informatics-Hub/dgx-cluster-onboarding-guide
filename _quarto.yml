@@ -16,27 +16,27 @@ website:
       - section: "Getting Started with the DGX Cluster"
         contents:
         - text: "Introduction to the DGX Cluster"
-          href: notebooks/00_dgx.html
+          href: notebooks/dgx.html
       - section: "Getting Started with Run:ai"
         contents:
         - text: "Login"
-          href: notebooks/01_login.html
+          href: notebooks/login.html
         - text: "Navigating the User Interface"
-          href: notebooks/02_user_interface.html
+          href: notebooks/user_interface.html
       - section: "How-to Guides"
         contents:
         - text: "How to Use the Dashboards"
-          href: notebooks/03_dashboards.html
+          href: notebooks/dashboards.html
         - text: "How to Manage Projects"
-          href: notebooks/04_projects.html
+          href: notebooks/projects.html
         - text: "How to Configure Environments"
-          href: notebooks/05_environments.html
+          href: notebooks/environments.html
         - text: "How to transfer data to/from the DGX Cluster"
-          href: notebooks/07_data_transfer.html
+          href: notebooks/data_transfer.html
       - section: "Tutorials"
         contents:
         - text: "Creating a Jupyter Lab Workload"
-          href: notebooks/08_jupyter_tutorial.html
+          href: notebooks/jupyter_tutorial.html
   cookie-consent: 
     type: express
     style: simple
