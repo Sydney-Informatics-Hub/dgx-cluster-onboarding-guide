@@ -1,5 +1,5 @@
 ---
-title: "DGX Cluster Onboarding Guide"
+title: "SIH GPU Cluster Onboarding Guide"
 output:
   html_document:
     toc: false
@@ -7,13 +7,13 @@ output:
 ---
 
 :::{.callout-note}
-The DGX Cluster is managed by the [Sydney Informatics Hub](https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html) at the University of Sydney. Contact <sih.info@sydney.edu.au> for more questions.
+The SIH GPU Cluster is managed by the [Sydney Informatics Hub](https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html) at the University of Sydney. Contact <sih.info@sydney.edu.au> for more questions.
 :::
 
 
 |  |  |
 | --- | :--- |
 | **Section** | **Content** |
-| Getting Started with the DGX Cluster | DGX/GPU fundamentals |
+| Getting Started with the SIH GPU Cluster | Cluster fundamentals |
 | Getting Started with Run:ai | Run:ai fundamentals |
 | How-to Guides | Provide step-by-step instructions |

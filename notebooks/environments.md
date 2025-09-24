@@ -4,7 +4,7 @@ In Run:AI, an environment is a configuration that defines the software setup nee
 - Base Docker image (e.g., pytorch/pytorch, tensorflow/tensorflow:2.20.0-jupyter)
 - Tools (such as Jupyter, RStudio, etc.)
 - Custom runtime settings to run scripts or setup commands (e.g., installing extra packages, configuring the base URL, etc.)
-The DGX platform has provided several environments for users to get started with:
+The SIH GPU platform has provided several environments for users to get started with:
 
 1. Select “Environments” on the left panel, then click on “NEW ENVIRONMENT”
 ![](../fig/environment_new_env.png)
