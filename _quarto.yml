@@ -5,7 +5,8 @@ project:
 website:
   title: "DGX Cluster Onboarding Guide"
   site-url: https://sydney-informatics-hub.github.io/
-  # navbar:
+  navbar:
+    logo: fig/usyd-logo.png
   sidebar:
     style: "docked"
     background: white
@@ -51,10 +52,8 @@ format:
    link-external-newwindow: true
    link-external-icon: true # displays an icon next to external links
    toc: true
-   theme:
-      light: flatly
-      # dark: darkly
-  #  css: styles.scss
+   css: [lesson.css,bootstrap-icons.css]
+   theme: cosmo
    code-link: true
    code-fold: false
    
