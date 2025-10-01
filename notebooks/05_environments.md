@@ -38,3 +38,5 @@ The DGX platform has provided several environments for users to get started with
 ![](../fig/environment_security.png)
 
 9. Finally, select “CREATE ENVIRONMENT” to finish the setup.
+
+## How to Run a Terminal Environment at the Command Line
