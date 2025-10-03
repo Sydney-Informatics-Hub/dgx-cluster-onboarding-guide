@@ -1,5 +1,5 @@
 # Tutorial: Running a Jupyter Lab Workload
-A workload is the actual job or task you want to run on the platform. This could be training an AI model, running inference, doing data preprocessing, or conducting a scientific simulation.
+A workload is the actual job or task you want to run on the platform. This could be training an AI model, and running an inference model and exposing its endpoint, doing data preprocessing, or conducting a scientific simulation.
 
 Generally, the minimum requirements you need before creating the workload include:
 
@@ -8,21 +8,21 @@ Generally, the minimum requirements you need before creating the workload includ
 * Have created a data source, e.g. a PVC, to store your input and output data
 * Understand the compute resources you need to run the job and have the option available under Compute Resources
 
-In this tutorial, we will create a simple Jupyter Lab workload that allows you to run Jupyter notebooks on the platform.
+In this tutorial, we will create a simple Jupyter Lab workload that allows you to run Jupyter notebooks interactively on the SIH GPU cluster.
 
 ## Step 1: Create a workload
-Navigate to the Workloads section of the platform and click on the "NEW WORKLOADS" button. Select "Workspace" from the dropdown menu.
+Navigate to the Workloads section of the platform and click on the "NEW WORKLOAD" button. Select "Workspace" from the dropdown menu.
 ![New workload](../fig/workload_create_workspace.png)
 
 ## Step 2: Configure the workload from scratch
 Fill in the necessary details for your workload:
 
-* the project it will be linked to
-* do not use any existing template ("Start from sratch")
+* Under "Projects" select the project it will be linked to
+* Under "Templates" select "Start from sratch" (do not use any existing template)
 ![Project and Template](../fig/workload_definition.png)
-* the container environment it will be running
+* Under "Environment" select the Jupyter Lab container environment you want to run
 ![Software environment](../fig/workload_environment.png)
-* and the compute resource required.
+* Under "Compute resource" select the resources required.
 ![Compute resource](../fig/workload_comp_resource.png)
 
 There are other optional components you can add to a workload depending on the needs of your task. These include:
