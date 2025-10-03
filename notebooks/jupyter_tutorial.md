@@ -4,7 +4,7 @@ A workload is the actual job or task you want to run on the platform. This could
 Generally, the minimum requirements you need before creating the workload include:
 
 * Being granted permission to an active project
-* An environment to run such job
+* An [environment](environments.md) to run such job
 * Have created a data source, e.g. a PVC, to store your input and output data
 * Understand the compute resources you need to run the job and have the option available under Compute Resources
 
