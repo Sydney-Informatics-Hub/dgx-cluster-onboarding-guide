@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>login – DGX Cluster Onboarding Guide</title>
+<title>user_interface – Sydney Informatics Hub GPU Cluster Onboarding Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,20 +34,21 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7cf22eaa24fbdd3c47ce0ba7a9e3ed7d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-158a648770c71448c719961375919068.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -99,18 +100,36 @@ cookieconsent.run({
   
 
 
+<link rel="stylesheet" href="../lesson.css">
+<link rel="stylesheet" href="../bootstrap-icons.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../fig/usyd-logo.png" alt="" class="navbar-logo light-content">
+    <img src="../fig/usyd-logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Sydney Informatics Hub GPU Cluster Onboarding Guide</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_login.html">Getting Started with Run:ai</a></li><li class="breadcrumb-item"><a href="../notebooks/01_login.html">Login</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/login.html">Getting Started with Run:ai</a></li><li class="breadcrumb-item"><a href="../notebooks/user_interface.html">Navigating the User Interface</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,13 +139,12 @@ cookieconsent.run({
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DGX Cluster Onboarding Guide</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -144,7 +162,7 @@ cookieconsent.run({
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Getting Started with the DGX Cluster</span></a>
+ <span class="menu-text">Getting Started with the SIH GPU Cluster</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -152,8 +170,8 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/00_dgx.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to the DGX Cluster</span></a>
+  <a href="../notebooks/dgx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to the SIH GPU Cluster</span></a>
   </div>
 </li>
       </ul>
@@ -169,13 +187,13 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/01_login.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notebooks/login.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Login</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/02_user_interface.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/user_interface.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Navigating the User Interface</span></a>
   </div>
 </li>
@@ -192,26 +210,43 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/03_dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Use the Dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/04_projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Manage Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/05_environments.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/environments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Configure Environments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/07_data_transfer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to transfer data to/from the DGX Cluster</span></a>
+  <a href="../notebooks/data_transfer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to transfer data to/from the SIH GPU Cluster</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/jupyter_tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating a Jupyter Lab Workload</span></a>
   </div>
 </li>
       </ul>
@@ -226,38 +261,29 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#login" id="toc-login" class="nav-link active" data-scroll-target="#login">Login</a></li>
+  <li><a href="#navigating-the-user-interface" id="toc-navigating-the-user-interface" class="nav-link active" data-scroll-target="#navigating-the-user-interface">Navigating the User Interface</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/01_login.html">Getting Started with Run:ai</a></li><li class="breadcrumb-item"><a href="../notebooks/01_login.html">Login</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/login.html">Getting Started with Run:ai</a></li><li class="breadcrumb-item"><a href="../notebooks/user_interface.html">Navigating the User Interface</a></li></ol></nav></header>
 
 
 
 
-<section id="login" class="level1">
-<h1>Login</h1>
-<ol type="1">
-<li>If you are not on the Sydney university network (e.g.&nbsp;working from home), you will need to <a href="https://sydneyuni.service-now.com/sm?id=kb_article_view&amp;sysparm_article=KB0011460">connect to the VPN</a> to see the login page.</li>
-<li>Go to: <a href="https://gpu.sydney.edu.au/" class="uri">https://gpu.sydney.edu.au/</a>.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../fig/login_page.png" class="img-fluid figure-img"></p>
-<figcaption>Run:ai login page</figcaption>
-</figure>
-</div>
-<ol start="3" type="1">
-<li>Click “🔑 CONTINUE WITH SSO”. This will prompt you to use Okta to authenticate your login.</li>
-<li>Once the login is successful, you’ll be presented with the landing (“Workloads”) page.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../fig/landing_page.png" class="img-fluid figure-img"></p>
-<figcaption>Run:ai Workloads page</figcaption>
-</figure>
-</div>
+<section id="navigating-the-user-interface" class="level1">
+<h1>Navigating the User Interface</h1>
+<p><img src="../fig/navigation_panel.png" class="img-fluid"> On the left panel, there are several options to select:</p>
+<ul>
+<li><p>Dashboards: Two system dashboards, namely “Overview” and “Analytics”, are accessible to users. They provide both system- and project-level information including system summaries, real-time resource allocation, cluster load, etc.</p></li>
+<li><p>Projects: This lists out the projects the user has been assigned to.</p></li>
+<li><p>Workloads: This page provides a summary of the current workloads and allows users to create and configure new workloads.</p></li>
+<li><p>Environments: Both platform-wide and customised environments can be found in this page.</p></li>
+<li><p>Data Sources: This page allows users to configure new data sources and view existing ones.</p></li>
+<li><p>Compute Resources: This page summaries all compute resources (similar to choosing the “flavours” in a cloud computing environment) and allows users to create new compute resources for their specific needs.</p></li>
+<li><p>Templates: This feature allows users to manage bespoke templates configured for their specific workloads.</p></li>
+<li><p>Credentials: This space allows users to define secrets including access keys, passwords, or other sensitive information essential to the execution of workloads during runtime.</p></li>
+</ul>
 
 
 </section>
@@ -314,13 +340,14 @@ cookieconsent.run({
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

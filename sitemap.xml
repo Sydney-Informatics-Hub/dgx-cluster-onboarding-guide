@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/data_transfer.html</loc>
+    <lastmod>2025-10-03T07:39:44.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/dashboards.html</loc>
+    <lastmod>2025-10-03T07:39:44.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/storage.html</loc>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/projects.html</loc>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/jupyter_tutorial.html</loc>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
+  </url>
+  <url>
     <loc>https://sydney-informatics-hub.github.io/index.html</loc>
-    <lastmod>2025-09-12T02:58:31.617Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/00_dgx.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/01_login.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/06_storage.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/07_data_transfer.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/02_user_interface.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/03_dashboards.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/04_projects.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sydney-informatics-hub.github.io/notebooks/05_environments.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
+    <lastmod>2025-10-03T07:39:44.113Z</lastmod>
   </url>
   <url>
     <loc>https://sydney-informatics-hub.github.io/setup.html</loc>
-    <lastmod>2025-09-12T02:58:31.618Z</lastmod>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/dgx.html</loc>
+    <lastmod>2025-10-03T07:39:44.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/environments.html</loc>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/login.html</loc>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sydney-informatics-hub.github.io/notebooks/user_interface.html</loc>
+    <lastmod>2025-10-03T07:39:44.114Z</lastmod>
   </url>
 </urlset>

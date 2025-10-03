@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>dgx – DGX Cluster Onboarding Guide</title>
+<title>jupyter_tutorial – Sydney Informatics Hub GPU Cluster Onboarding Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,20 +34,21 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7cf22eaa24fbdd3c47ce0ba7a9e3ed7d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-158a648770c71448c719961375919068.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -99,18 +100,36 @@ cookieconsent.run({
   
 
 
+<link rel="stylesheet" href="../lesson.css">
+<link rel="stylesheet" href="../bootstrap-icons.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../fig/usyd-logo.png" alt="" class="navbar-logo light-content">
+    <img src="../fig/usyd-logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Sydney Informatics Hub GPU Cluster Onboarding Guide</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_dgx.html">Getting Started with the DGX Cluster</a></li><li class="breadcrumb-item"><a href="../notebooks/00_dgx.html">Introduction to the DGX Cluster</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/jupyter_tutorial.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../notebooks/jupyter_tutorial.html">Creating a Jupyter Lab Workload</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,13 +139,12 @@ cookieconsent.run({
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">DGX Cluster Onboarding Guide</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -144,7 +162,7 @@ cookieconsent.run({
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Getting Started with the DGX Cluster</span></a>
+ <span class="menu-text">Getting Started with the SIH GPU Cluster</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -152,8 +170,8 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/00_dgx.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introduction to the DGX Cluster</span></a>
+  <a href="../notebooks/dgx.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to the SIH GPU Cluster</span></a>
   </div>
 </li>
       </ul>
@@ -169,13 +187,13 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/01_login.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/login.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Login</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/02_user_interface.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/user_interface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Navigating the User Interface</span></a>
   </div>
 </li>
@@ -192,26 +210,43 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/03_dashboards.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/dashboards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Use the Dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/04_projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Manage Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/05_environments.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/environments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">How to Configure Environments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/07_data_transfer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to transfer data to/from the DGX Cluster</span></a>
+  <a href="../notebooks/data_transfer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to transfer data to/from the SIH GPU Cluster</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/jupyter_tutorial.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Creating a Jupyter Lab Workload</span></a>
   </div>
 </li>
       </ul>
@@ -226,40 +261,58 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-the-dgx-cluster" id="toc-introduction-to-the-dgx-cluster" class="nav-link active" data-scroll-target="#introduction-to-the-dgx-cluster">Introduction to the DGX Cluster</a></li>
-  <li><a href="#expressions-of-interest" id="toc-expressions-of-interest" class="nav-link" data-scroll-target="#expressions-of-interest">Expressions of Interest</a></li>
+  <li><a href="#tutorial-running-a-jupyter-lab-workload" id="toc-tutorial-running-a-jupyter-lab-workload" class="nav-link active" data-scroll-target="#tutorial-running-a-jupyter-lab-workload">Tutorial: Running a Jupyter Lab Workload</a>
+  <ul class="collapse">
+  <li><a href="#step-1-create-a-workload" id="toc-step-1-create-a-workload" class="nav-link" data-scroll-target="#step-1-create-a-workload">Step 1: Create a workload</a></li>
+  <li><a href="#step-2-configure-the-workload-from-scratch" id="toc-step-2-configure-the-workload-from-scratch" class="nav-link" data-scroll-target="#step-2-configure-the-workload-from-scratch">Step 2: Configure the workload from scratch</a></li>
+  <li><a href="#optional-create-a-workload-from-a-template" id="toc-optional-create-a-workload-from-a-template" class="nav-link" data-scroll-target="#optional-create-a-workload-from-a-template">Optional: Create a workload from a template</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/00_dgx.html">Getting Started with the DGX Cluster</a></li><li class="breadcrumb-item"><a href="../notebooks/00_dgx.html">Introduction to the DGX Cluster</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/jupyter_tutorial.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../notebooks/jupyter_tutorial.html">Creating a Jupyter Lab Workload</a></li></ol></nav></header>
 
 
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>COMING SOON! We expect the DGX cluster to be available for researchers to use in October 2025. Stay tuned for updates from the <a href="https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html">Sydney Informatics Hub</a>!</p>
-</div>
-</div>
-<section id="introduction-to-the-dgx-cluster" class="level1">
-<h1>Introduction to the DGX Cluster</h1>
-<p>The DGX Cluster is a high-performance computing (HPC) platform designed to accelerate AI and machine learning workloads. It is built on NVIDIA’s DGX systems, which are purpose-built for deep learning and AI research. The cluster provides researchers with access to powerful GPUs, high-speed networking, and a robust software stack to facilitate development in AI research and scientific simulations.</p>
-<p>More information about the DGX Cluster can be found on the <a href="https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/3579674625/SIH+GPU+Cluster">Sydney Informatics Hub’s Research Computing page</a>.</p>
+<section id="tutorial-running-a-jupyter-lab-workload" class="level1">
+<h1>Tutorial: Running a Jupyter Lab Workload</h1>
+<p>A workload is the actual job or task you want to run on the platform. This could be training an AI model, and running an inference model and exposing its endpoint, doing data preprocessing, or conducting a scientific simulation.</p>
+<p>Generally, the minimum requirements you need before creating the workload include:</p>
+<ul>
+<li>Being granted permission to an active project</li>
+<li>An <a href="../notebooks/environments.html">environment</a> to run such job</li>
+<li>Have created a data source, e.g.&nbsp;a PVC, to store your input and output data</li>
+<li>Understand the compute resources you need to run the job and have the option available under Compute Resources</li>
+</ul>
+<p>In this tutorial, we will create a simple Jupyter Lab workload that allows you to run Jupyter notebooks interactively on the SIH GPU cluster.</p>
+<section id="step-1-create-a-workload" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-create-a-workload">Step 1: Create a workload</h2>
+<p>Navigate to the Workloads section of the platform and click on the “NEW WORKLOAD” button. Select “Workspace” from the dropdown menu. <img src="../fig/workload_create_workspace.png" class="img-fluid" alt="New workload"></p>
 </section>
-<section id="expressions-of-interest" class="level1">
-<h1>Expressions of Interest</h1>
-<p>The DGX Cluster is currently in its final stages of deployment and is expected to be available for researchers to use in October 2025. If you are interested in using the DGX Cluster for your research projects, please express your interest by filling out the <a href="https://forms.office.com/r/kmn4P1WNjq">Expression of Interest Form</a>. This will help us gauge demand and plan for user onboarding and support.</p>
+<section id="step-2-configure-the-workload-from-scratch" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-configure-the-workload-from-scratch">Step 2: Configure the workload from scratch</h2>
+<p>Fill in the necessary details for your workload:</p>
+<ul>
+<li>Under “Projects” select the project it will be linked to</li>
+<li>Under “Templates” select “Start from sratch” (do not use any existing template) <img src="../fig/workload_definition.png" class="img-fluid" alt="Project and Template"></li>
+<li>Under “Environment” select the Jupyter Lab container environment you want to run <img src="../fig/workload_environment.png" class="img-fluid" alt="Software environment"></li>
+<li>Under “Compute resource” select the resources required. <img src="../fig/workload_comp_resource.png" class="img-fluid" alt="Compute resource"></li>
+</ul>
+<p>There are other optional components you can add to a workload depending on the needs of your task. These include:</p>
+<ul>
+<li>Volume (i.e.&nbsp;temporary data storage)</li>
+<li>Data Sources (e.g.&nbsp;PVCs)</li>
+<li>Other general settings <img src="../fig/workload_additional_setups.png" class="img-fluid"></li>
+</ul>
+</section>
+<section id="optional-create-a-workload-from-a-template" class="level2">
+<h2 class="anchored" data-anchor-id="optional-create-a-workload-from-a-template">Optional: Create a workload from a template</h2>
+<p>Besides the project allocation, all the other workload components can be populated from a pre-defined template: <img src="../fig/workload_template.png" class="img-fluid" alt="Create workload from existing template"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -314,13 +367,14 @@ Important
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
