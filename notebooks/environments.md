@@ -40,3 +40,35 @@ The SIH GPU platform has provided several environments for users to get started 
 9. Finally, select “CREATE ENVIRONMENT” to finish the setup.
 
 ## How to Run a Terminal Environment at the Command Line
+
+You can start a workload from a terminal session on your own laptop as long as you are connected to the University VPN. This can be done using the Command Line Interface (CLI) that Run:AI provides.
+
+### Setting up the Run:AI CLI
+
+To set up the CLI in your terminal:
+
+1. Log into the Run:AI web interface and select the 'Researcher Command Line Interface' from the drop-down menu under the '?' icon in the top right.
+
+![](../fig/researcher_command_line_interface.png)
+
+2. Select your preferred operating system and copy the command indicated in the box using the icon on the right - then paste this command into a terminal session on your local machine.
+
+![](../fig/install_cli.png)
+
+3. Follow the prompts in your terminal to set up the CLI. Once complete you should now be able to start the CLI in a terminal using `runai login` at the command line.
+
+Once the Run:AI CLI is set up - you can start a workflow by running a saved docker image of your choice. SIH have provided base docker images with a pre-installed set of common dependencies for GPU (`sydneyinformaticshub/dgx-interactive-gpu`) and CPU (`sydneyformaticshub\dgx-interactive-cpu`) workflows on [dockerhub](https://hub.docker.com/u/sydneyinformaticshub).
+
+### Example running a GPU workflow using the CLI
+
+1. First login to the runai CLI at the command line:
+
+```bash
+runai login
+```
+
+You will be prompted to 
+
+2. 
+
+3. 
