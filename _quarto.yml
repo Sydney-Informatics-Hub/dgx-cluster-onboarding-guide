@@ -34,6 +34,8 @@ website:
           href: notebooks/environments.html
         - text: "How to transfer data to/from the SIH GPU Cluster"
           href: notebooks/data_transfer.html
+        - text: "How to run a terminal using the Command Line Interface (CLI)"
+          href: notebooks/CLI.html
       - section: "Tutorials"
         contents:
         - text: "Creating a Jupyter Lab Workload"
@@ -52,7 +54,7 @@ format:
    link-external-newwindow: true
    link-external-icon: true # displays an icon next to external links
    toc: true
-   css: [lesson.css,bootstrap-icons.css]
+   css: [lesson.css]
    theme: cosmo
    code-link: true
    code-fold: false
