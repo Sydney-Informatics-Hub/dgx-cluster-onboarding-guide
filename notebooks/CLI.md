@@ -1,6 +1,6 @@
 # The Run:AI Command Line Interface (CLI)
 
-The Run:AI (Command Line Interface)[https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli] (CLI) is a tool that allows researchers to manage and run workloads directly from the terminal. It provides commands to submit, monitor, and control jobs on the SIH GPU cluster, as well as to manage projects, resources, and configurations. Using the CLI, users can interact with Run:AI’s platform without needing to access the graphical interface.
+The Run:AI [Command Line Interface](https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli) (CLI) is a tool that allows researchers to manage and run workloads directly from the terminal. It provides commands to submit, monitor, and control jobs on the SIH GPU cluster, as well as to manage projects, resources, and configurations. Using the CLI, users can interact with Run:AI’s platform without needing to access the graphical interface.
 
 ## Setting up the Run:AI CLI
 
@@ -49,36 +49,44 @@ Here is a brief rundown of the arguments of the command above:
 
 - `runai workspace submit <workspace-name>` will run a new workspace and give it the name specified in `<workspace-name>`
 
-- `--image sydneyinformaticshub/dgx-interactive-gpu` will run the base Docker image located at `sydneyinformaticshub/dgx-interactive-gpu`, you can replace this image with your own, perhaps built of this image as a base
+- `--image sydneyinformaticshub/dgx-interactive-gpu` will run the base Docker image located at `sydneyinformaticshub/dgx-interactive-gpu`, you can replace this image with your own, perhaps built yourself with extra package installs and using this image as a base
 
-- `--gpu-devices-request 1 --cpu-core-request 1.0` requests 1 GPU and 1 CPU for the workflow. There are multiple options for selecting GPU and CPU RAM and devices, see (here)[https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli/runai/runai_workspace_submit] or use `runai wrkspace submit --help` for a ful list of options
+- `--gpu-devices-request 1 --cpu-core-request 1.0` requests 1 GPU and 1 CPU for the workflow. There are multiple options for selecting GPU and CPU RAM and devices, see [here](https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli/runai/runai_workspace_submit) or use `runai wrkspace submit --help` for a full list of options
 
-- `--run-as-user` will run the workflow using your user id and group ids inherited from DashR for your project. These will be the user and groups for the account you logged into Run:AI with in step 1. above. You should normally use this option.
+- `--run-as-user` will run the workflow using your user id and group ids inherited from DashR for your project. These will be the user and groups for the account you logged into Run:AI with in step 1 above. You should normally use this option otherwise user and group ids may not be set up correctly inside your workspace
 
-- `--existing-pvc claimname=<pvc-name>,path=/scratch` will mount you existing PVC associated with your project into the running workload. Replace <pvc-name> with the name of your PVC. This will mount the PVC into `/scratch` inside the running container - you can change this mount point to whatever you prefer.
+- `--existing-pvc claimname=<pvc-name>,path=/scratch` will mount an existing PVC associated with your project into the running workload. Replace <pvc-name> with the name of your PVC. This will mount the PVC into `/scratch` inside the running container - you can change this mount point to whatever you prefer inside the running workload. You can also omit this flag entirely if you do not intend to use a PVC in your workspace.
 
 - `--attach` will run the container and attach to it, which in this case will provide an interactive shell session inside it.
 
 ## Run a workflow in the background and connect to it using the CLI
 
-Using the CLI it is also possible to set up a workflow that persists in the background and connect to it whenever you like or as many times as you like - this is a useful option if you want to reserve resources that you can keep available as you require or you want to share resources interactively amongst multiple users.
+Using the CLI it is also possible to set up a workflow that persists in the background. You can then connect to it whenever you like or as many times as you like - this is a useful option if you want to reserve resources that you can keep available as you require or you want to share resources interactively amongst multiple users.
 
-To set this up follow the steps 1. and 2. above, then change the command in step 3. to:
+To set this up follow the steps 1 and 2 above, then change the command in step 3 to:
 
 ```bash
 runai workspace submit <workspace-name> --image sydneyinformaticshub/dgx-interactive-gpu --gpu-devices-request 1 --cpu-core-request 1.0 --run-as-user --existing-pvc claimname=<pvc-name>,path=/scratch --command -- bash -c 'trap : TERM INT; sleep infinity & wait'
 ```
 
-This will run the workload and keep it persisiting in the background. You can then connect to this container whenever you like using:
+This will run the workload and keep it persisting in the background. You can then connect to this container whenever you like using:
 
 ```bash
 runai workspace bash <workspace-name>
 ```
 
-you can use this method to connect to any running workspace on the cluster.
+you can use this method to connect to any running workspace on the cluster as well as connect multiple terminals inside the running workspace.
 
 Make sure you terminate the background workspace when you are finished. You can do this using:
 
 ```bash
 runai workspace suspend <workspace-name>
 ```
+
+to suspend the workspace so you can restart it again later or
+
+```bash
+runai workspace delete <workspace-name>
+```
+
+to delete the workspace entirely. Please note that when deleting the workspace you will lose all data inside it not saved to a mounted PVC.
