@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>storage – Sydney Informatics Hub GPU Cluster Onboarding Guide</title>
+<title>cli – Sydney Informatics Hub GPU Cluster Onboarding Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -128,7 +163,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/CLI.html">How to run a terminal using the Command Line Interface (CLI)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -233,7 +268,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/CLI.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/CLI.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">How to run a terminal using the Command Line Interface (CLI)</span></a>
   </div>
 </li>
@@ -266,20 +301,88 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-manage-the-persistent-volume-claim" id="toc-how-to-manage-the-persistent-volume-claim" class="nav-link active" data-scroll-target="#how-to-manage-the-persistent-volume-claim">How to manage the persistent volume claim</a></li>
+  <li><a href="#the-runai-command-line-interface-cli" id="toc-the-runai-command-line-interface-cli" class="nav-link active" data-scroll-target="#the-runai-command-line-interface-cli">The Run:AI Command Line Interface (CLI)</a>
+  <ul class="collapse">
+  <li><a href="#setting-up-the-runai-cli" id="toc-setting-up-the-runai-cli" class="nav-link" data-scroll-target="#setting-up-the-runai-cli">Setting up the Run:AI CLI</a></li>
+  <li><a href="#how-to-run-a-terminal-environment-at-the-command-line" id="toc-how-to-run-a-terminal-environment-at-the-command-line" class="nav-link" data-scroll-target="#how-to-run-a-terminal-environment-at-the-command-line">How to Run a Terminal Environment at the Command Line</a>
+  <ul class="collapse">
+  <li><a href="#example-running-a-gpu-workflow-using-the-cli" id="toc-example-running-a-gpu-workflow-using-the-cli" class="nav-link" data-scroll-target="#example-running-a-gpu-workflow-using-the-cli">Example running a GPU workflow using the CLI</a></li>
+  </ul></li>
+  <li><a href="#run-a-workflow-in-the-background-and-connect-to-it-using-the-cli" id="toc-run-a-workflow-in-the-background-and-connect-to-it-using-the-cli" class="nav-link" data-scroll-target="#run-a-workflow-in-the-background-and-connect-to-it-using-the-cli">Run a workflow in the background and connect to it using the CLI</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/CLI.html">How to run a terminal using the Command Line Interface (CLI)</a></li></ol></nav></header>
 
 
 
 
-<section id="how-to-manage-the-persistent-volume-claim" class="level1">
-<h1>How to manage the persistent volume claim</h1>
+<section id="the-runai-command-line-interface-cli" class="level1">
+<h1>The Run:AI Command Line Interface (CLI)</h1>
+<p>The Run:AI <a href="https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli">Command Line Interface</a> (CLI) is a tool that allows researchers to manage and run workloads directly from the terminal. It provides commands to submit, monitor, and control jobs on the SIH GPU cluster, as well as to manage projects, resources, and configurations. Using the CLI, users can interact with Run:AI’s platform without needing to access the graphical interface.</p>
+<section id="setting-up-the-runai-cli" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-runai-cli">Setting up the Run:AI CLI</h2>
+<p>To set up the CLI in your terminal:</p>
+<ol type="1">
+<li>Log into the Run:AI web interface and select the ‘Researcher Command Line Interface’ from the drop-down menu under the ‘?’ icon in the top right.</li>
+</ol>
+<p><img src="../fig/researcher_command_line_interface.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Select your preferred operating system and copy the command indicated in the box using the icon on the right - then paste this command into a terminal session on your local machine.</li>
+</ol>
+<p><img src="../fig/install_cli.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Follow the prompts in your terminal to set up the CLI. Once complete you should now be able to start the CLI in a terminal using <code>runai login</code> at the command line.</li>
+</ol>
+<p>Once the Run:AI CLI is set up - you can start a workflow by running a saved docker image of your choice. SIH have provided base docker images with a pre-installed set of common dependencies for GPU (<code>sydneyinformaticshub/dgx-interactive-gpu</code>) and CPU (<code>sydneyinformaticshub/dgx-interactive-cpu</code>) workflows on <a href="https://hub.docker.com/u/sydneyinformaticshub">dockerhub</a>, including basic packages for interactive use (e.g.&nbsp;ipython).</p>
+</section>
+<section id="how-to-run-a-terminal-environment-at-the-command-line" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-run-a-terminal-environment-at-the-command-line">How to Run a Terminal Environment at the Command Line</h2>
+<p>You can start a workload from a terminal session on your own laptop as long as you are connected to the University VPN. You can run this interactively which provides a simple terminal environment running inside the SIH GPU cluster.</p>
+<section id="example-running-a-gpu-workflow-using-the-cli" class="level3">
+<h3 class="anchored" data-anchor-id="example-running-a-gpu-workflow-using-the-cli">Example running a GPU workflow using the CLI</h3>
+<ol type="1">
+<li>Login to the Run:AI CLI at the command line:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> login</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>you will be prompted for your password and Okta credentials in a browser window during this step.</p>
+<ol start="2" type="1">
+<li>Set your project (replace <code>&lt;my project&gt;</code> with the name of your project):</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> project set <span class="op">&lt;</span>my_project<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>To run an <code>sydneyinformaticshub/dgx-interactive-gpu</code> container with an interactive terminal session including mounting your projects existing PVC in /scratch inside the container you can use the following command (be sure to replace everything in brackets <code>&lt;...&gt;</code> with values specific to your requirements):</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> workspace submit <span class="op">&lt;</span>workspace-name<span class="op">&gt;</span> --image sydneyinformaticshub/dgx-interactive-gpu <span class="at">--gpu-devices-request</span> 1 <span class="at">--cpu-core-request</span> 1.0 <span class="at">--run-as-user</span> <span class="at">--existing-pvc</span> claimname=<span class="op">&lt;</span>pvc-name<span class="op">&gt;</span>,path=/scratch <span class="at">--attach</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Here is a brief rundown of the arguments of the command above:</p>
+<ul>
+<li><p><code>runai workspace submit &lt;workspace-name&gt;</code> will run a new workspace and give it the name specified in <code>&lt;workspace-name&gt;</code></p></li>
+<li><p><code>--image sydneyinformaticshub/dgx-interactive-gpu</code> will run the base Docker image located at <code>sydneyinformaticshub/dgx-interactive-gpu</code>, you can replace this image with your own, perhaps built yourself with extra package installs and using this image as a base</p></li>
+<li><p><code>--gpu-devices-request 1 --cpu-core-request 1.0</code> requests 1 GPU and 1 CPU for the workflow. There are multiple options for selecting GPU and CPU RAM and devices, see <a href="https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli/runai/runai_workspace_submit">here</a> or use <code>runai wrkspace submit --help</code> for a full list of options</p></li>
+<li><p><code>--run-as-user</code> will run the workflow using your user id and group ids inherited from DashR for your project. These will be the user and groups for the account you logged into Run:AI with in step 1 above. You should normally use this option otherwise user and group ids may not be set up correctly inside your workspace</p></li>
+<li><p><code>--existing-pvc claimname=&lt;pvc-name&gt;,path=/scratch</code> will mount an existing PVC associated with your project into the running workload. Replace <pvc-name> with the name of your PVC. This will mount the PVC into <code>/scratch</code> inside the running container - you can change this mount point to whatever you prefer inside the running workload. You can also omit this flag entirely if you do not intend to use a PVC in your workspace.</pvc-name></p></li>
+<li><p><code>--attach</code> will run the container and attach to it, which in this case will provide an interactive shell session inside it.</p></li>
+</ul>
+</section>
+</section>
+<section id="run-a-workflow-in-the-background-and-connect-to-it-using-the-cli" class="level2">
+<h2 class="anchored" data-anchor-id="run-a-workflow-in-the-background-and-connect-to-it-using-the-cli">Run a workflow in the background and connect to it using the CLI</h2>
+<p>Using the CLI it is also possible to set up a workflow that persists in the background. You can then connect to it whenever you like or as many times as you like - this is a useful option if you want to reserve resources that you can keep available as you require or you want to share resources interactively amongst multiple users.</p>
+<p>To set this up follow the steps 1 and 2 above, then change the command in step 3 to:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> workspace submit <span class="op">&lt;</span>workspace-name<span class="op">&gt;</span> --image sydneyinformaticshub/dgx-interactive-gpu <span class="at">--gpu-devices-request</span> 1 <span class="at">--cpu-core-request</span> 1.0 <span class="at">--run-as-user</span> <span class="at">--existing-pvc</span> claimname=<span class="op">&lt;</span>pvc-name<span class="op">&gt;</span>,path=/scratch <span class="at">--command</span> <span class="at">--</span> bash <span class="at">-c</span> <span class="st">'trap : TERM INT; sleep infinity &amp; wait'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will run the workload and keep it persisting in the background. You can then connect to this container whenever you like using:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> workspace bash <span class="op">&lt;</span>workspace-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>you can use this method to connect to any running workspace on the cluster as well as connect multiple terminals inside the running workspace.</p>
+<p>Make sure you terminate the background workspace when you are finished. You can do this using:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> workspace suspend <span class="op">&lt;</span>workspace-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>to suspend the workspace so you can restart it again later or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">runai</span> workspace delete <span class="op">&lt;</span>workspace-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>to delete the workspace entirely. Please note that when deleting the workspace you will lose all data inside it not saved to a mounted PVC.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
