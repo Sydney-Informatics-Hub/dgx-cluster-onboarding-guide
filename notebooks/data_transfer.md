@@ -6,9 +6,9 @@ Here we assume you already have set up a [project](projects.md) and have some Pe
 
 ## Interactive data transfer to/from RDS from a web-browser
 
-You can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an [environment](environments.md) called `interactive_dt` for you to do this.
+You can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an [environment](environments.md) called `data-transfer` for you to do this.
 
-To run the `interactive_dt` environment from a template:
+To run the `data-transfer` environment from a template:
 
 1. Log into the Run:ai dashboard at [gpu.sydney.edu.au](https://gpu.sydney.edu.au) and use Okta to login with your credentials via the "CONTINUE WITH SSO" sign in option.
 
@@ -16,9 +16,9 @@ To run the `interactive_dt` environment from a template:
 
 ![New Workload](../fig/workload_new.png)
 
-3. Select your project from the projects available and select the `interactive-data-transfer` template and give your workspace a name before clicking with your mouse cursor on CONTINUE.
+3. Select your project from the projects available and select the `data-transfer` template and give your workspace a name before clicking with your mouse cursor on CONTINUE.
 
-4. If you have selected the `interactive-data-transfer` template, you should now have pre-populated the required `interactive-dt` environment and the `data-transfer` compute resource fields on the following page. You can double check this now.
+4. If you have selected the `data-transfer` template, you should now have pre-populated the required `data-transfer` environment and the `data-transfer` compute resource fields on the following page. You can double check this now.
 
 5. Expand the `Data sources` box and select the PVC associated with your project from the list.
 
@@ -65,27 +65,6 @@ rsync -rlctP <pvc_mount_point>/<path_to_pvc_data> <your_unikey>@research-data-in
 The above rsync will also perform integrity checking using a *checksum*, comparing the original and copied files to make sure they are identical.
 
 During file transfer, for larger files, you can close the browser and leave things running in the background. You can then reconnect to check its status by logging back into the web UI at [gpu.sydney.edu.au](https://gpu.sydney.edu.au).
-    
-::: {.callout-warning}
-
-# For early adopters
-
-Until we have correct user IDs and group IDs for your unikey and project set up in the PVC and the running workflow, you will need to update the permissions of the mounted PVC as root to be able to read/write files from there. To do this:
-
-1. Change to root
-
-```bash
-sudo su
-```
-
-2. Use chmod to set read and write for all on your mounted PVC space
-
-```bash
-chmod -R 666 <PVC_mount_point>
-```
-
-You must do these steps BEFORE running the `rsync` command above.
-:::
 
 
 
