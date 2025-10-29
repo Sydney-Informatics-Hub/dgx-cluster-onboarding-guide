@@ -128,7 +128,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How to Use the Dashboards</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">Run:ai Features</a></li><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">Dashboards</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,6 +173,12 @@ cookieconsent.run({
  <span class="menu-text">Introduction to the SIH GPU Cluster</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing the SIH GPU Cluster</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -201,7 +207,7 @@ cookieconsent.run({
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">How-to Guides</span></a>
+ <span class="menu-text">Run:ai Features</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -210,31 +216,25 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/dashboards.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">How to Use the Dashboards</span></a>
+ <span class="menu-text">Dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/projects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to Manage Projects</span></a>
+ <span class="menu-text">Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to Configure Environments</span></a>
+ <span class="menu-text">Environments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/data_transfer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to transfer data to/from the SIH GPU Cluster</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebooks/CLI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to run a terminal using the Command Line Interface (CLI)</span></a>
+  <a href="../notebooks/data_sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Sources</span></a>
   </div>
 </li>
       </ul>
@@ -251,7 +251,19 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/jupyter_tutorial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Jupyter Lab Workload</span></a>
+ <span class="menu-text">Creating a basic Jupyter Lab workload</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/data_transfer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to transfer data to/from the SIH GPU Cluster</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/CLI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to run a terminal using the Command Line Interface (CLI)</span></a>
   </div>
 </li>
       </ul>
@@ -266,7 +278,7 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-use-the-dashboards" id="toc-how-to-use-the-dashboards" class="nav-link active" data-scroll-target="#how-to-use-the-dashboards">How to Use the Dashboards</a>
+  <li><a href="#runai-dashboards" id="toc-runai-dashboards" class="nav-link active" data-scroll-target="#runai-dashboards">Run:ai Dashboards</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
@@ -282,39 +294,70 @@ cookieconsent.run({
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How to Use the Dashboards</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">Run:ai Features</a></li><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">Dashboards</a></li></ol></nav></header>
 
 
 
 
-<section id="how-to-use-the-dashboards" class="level1">
-<h1>How to Use the Dashboards</h1>
+<section id="runai-dashboards" class="level1">
+<h1>Run:ai Dashboards</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>This dashboard view provides holistic infrastructure information useful for both researchers and system administrators in managing and planning the resources.</p>
 <section id="indicators" class="level3">
 <h3 class="anchored" data-anchor-id="indicators">Indicators</h3>
-<p>This section presents high-level statistics of the GPU computing resources <img src="../fig/dashboards_overview_indicators.png" class="img-fluid"></p>
+<p>This section presents high-level statistics of the GPU computing resources</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/dashboards_overview_indicators.png" class="img-fluid figure-img"></p>
+<figcaption>The “Indicators” panel under “Overview”</figcaption>
+</figure>
+</div>
 </section>
 <section id="cluster-load" class="level3">
 <h3 class="anchored" data-anchor-id="cluster-load">Cluster Load</h3>
-<p>Real-time monitoring of the cluster status in terms of GPU and CPU utilisation. <img src="../fig/dashboards_overview_clusterload.png" class="img-fluid"></p>
+<p>Real-time monitoring of the cluster status in terms of GPU and CPU utilisation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/dashboards_overview_clusterload.png" class="img-fluid figure-img"></p>
+<figcaption>Monitoring system-wide workload</figcaption>
+</figure>
+</div>
 </section>
 <section id="queueing" class="level3">
 <h3 class="anchored" data-anchor-id="queueing">Queueing</h3>
-<p>Inspecting all queueing jobs. Possible reasons why jobs are queueing include:</p>
+<p>Inspecting queueing jobs. Possible reasons why your jobs are queueing include:</p>
 <ul>
-<li>The number of GPUs requested to be allocated to the job has exceeded the remaining GPUs in the project.</li>
-<li>The job is waiting for other jobs to finish before it can be scheduled. <img src="../fig/dashboards_overview_queueing.png" class="img-fluid"></li>
+<li>The number of GPUs requested to be allocated to the job has exceeded the remaining GPU quota in the project.</li>
+<li>The GPU cluster is currently at full capacity and therefore has no available resources to schedule the job.</li>
+<li>The job is waiting for other jobs to finish before it can be scheduled.</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/dashboards_overview_queueing.png" class="img-fluid figure-img"></p>
+<figcaption>Queueing jobs</figcaption>
+</figure>
+</div>
 </section>
 <section id="idle-gpus" class="level3">
 <h3 class="anchored" data-anchor-id="idle-gpus">Idle GPUs</h3>
-<p>Displaying the number of idle GPUs currently allocated to running workloads. <img src="../fig/dashboards_overview_idleGPUs.png" class="img-fluid"></p>
+<p>Displaying the number of idle GPUs currently allocated to running workloads.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/dashboards_overview_idleGPUs.png" class="img-fluid figure-img"></p>
+<figcaption>Idle GPUs</figcaption>
+</figure>
+</div>
 </section>
 <section id="running-workloads" class="level3">
 <h3 class="anchored" data-anchor-id="running-workloads">Running Workloads</h3>
-<p>Summary of the list of running workloads. <img src="../fig/dashboards_overview_workloads.png" class="img-fluid"></p>
+<p>Summary of the list of running workloads.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/dashboards_overview_workloads.png" class="img-fluid figure-img"></p>
+<figcaption>Running workloads</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="analytics" class="level2">
@@ -324,8 +367,14 @@ cookieconsent.run({
 <li>Cluster</li>
 <li>Project</li>
 <li>Workloads</li>
-<li>Nodes <img src="../fig/dashboards_analytics.png" class="img-fluid"></li>
+<li>Nodes</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/dashboards_analytics.png" class="img-fluid figure-img"></p>
+<figcaption>System analytics</figcaption>
+</figure>
+</div>
 
 
 </section>

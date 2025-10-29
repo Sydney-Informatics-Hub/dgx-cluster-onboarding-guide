@@ -128,7 +128,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/projects.html">How to Manage Projects</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">Run:ai Features</a></li><li class="breadcrumb-item"><a href="../notebooks/projects.html">Projects</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,6 +173,12 @@ cookieconsent.run({
  <span class="menu-text">Introduction to the SIH GPU Cluster</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing the SIH GPU Cluster</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -201,7 +207,7 @@ cookieconsent.run({
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">How-to Guides</span></a>
+ <span class="menu-text">Run:ai Features</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -210,31 +216,25 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/dashboards.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to Use the Dashboards</span></a>
+ <span class="menu-text">Dashboards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/projects.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">How to Manage Projects</span></a>
+ <span class="menu-text">Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to Configure Environments</span></a>
+ <span class="menu-text">Environments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/data_transfer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to transfer data to/from the SIH GPU Cluster</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebooks/CLI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to run a terminal using the Command Line Interface (CLI)</span></a>
+  <a href="../notebooks/data_sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Sources</span></a>
   </div>
 </li>
       </ul>
@@ -251,7 +251,19 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/jupyter_tutorial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Jupyter Lab Workload</span></a>
+ <span class="menu-text">Creating a basic Jupyter Lab workload</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/data_transfer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to transfer data to/from the SIH GPU Cluster</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/CLI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to run a terminal using the Command Line Interface (CLI)</span></a>
   </div>
 </li>
       </ul>
@@ -266,18 +278,27 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-manage-projects" id="toc-how-to-manage-projects" class="nav-link active" data-scroll-target="#how-to-manage-projects">How to Manage Projects</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link active" data-scroll-target="#projects">Projects</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">How-to Guides</a></li><li class="breadcrumb-item"><a href="../notebooks/projects.html">How to Manage Projects</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/dashboards.html">Run:ai Features</a></li><li class="breadcrumb-item"><a href="../notebooks/projects.html">Projects</a></li></ol></nav></header>
 
 
 
 
-<section id="how-to-manage-projects" class="level1">
-<h1>How to Manage Projects</h1>
+<section id="projects" class="level1">
+<h1>Projects</h1>
+<p>In Run:ai, users are organised into projects. This allows users to work collaboratively and access shared resources including granted GPU hours and disk storage.</p>
+<p>Once you have been granted access to the SIH GPU cluster, you will automatically be added to a project that shares the same name as your DashR project shortcode.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/project_example.png" class="img-fluid figure-img"></p>
+<figcaption>Listed Run:ai project</figcaption>
+</figure>
+</div>
+<p>Apart from the basic information such as the number of allocated GPUs and total quota, you can also cutomise the project view. To do so, click the “COLUMNS” button and select the desired fields to display.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -288,10 +309,9 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>THIS SECTION IS PENDING ON DUE TO ONGOING DEVELOPMENT RELATED TO USER AUTHENTICATION BY THE USYD ICT IDENTITY TEAM.</p>
+<p>Adjusting the project settings is restricted to system administrators only. If you require any changes to the project configuration, please contact the SIH support team.</p>
 </div>
 </div>
-<p>Once users are granted access to the SIH GPU cluster, projects are created in Run:ai to align with their DashR projects.</p>
 
 
 </section>
