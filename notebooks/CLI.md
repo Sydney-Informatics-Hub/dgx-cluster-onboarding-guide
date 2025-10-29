@@ -39,17 +39,17 @@ you will be prompted for your password and Okta credentials in a browser window 
 runai project set <my_project>
 ```
 
-3. To run an `sydneyinformaticshub/dgx-interactive-gpu` container with an interactive terminal session including mounting your projects existing PVC in /scratch inside the container you can use the following command (be sure to replace everything in brackets `<...>` with values specific to your requirements):
+3. To run an `sydneyinformaticshub/dgx-interactive-terminal` container with an interactive terminal session including mounting your projects existing PVC in /scratch inside the container you can use the following command (be sure to replace everything in brackets `<...>` with values specific to your requirements):
 
 ```bash
-runai workspace submit <workspace-name> --image sydneyinformaticshub/dgx-interactive-gpu --gpu-devices-request 1 --cpu-core-request 1.0 --run-as-user --existing-pvc claimname=<pvc-name>,path=/scratch --attach
+runai workspace submit <workspace-name> --image sydneyinformaticshub/dgx-interactive-terminal --gpu-devices-request 1 --cpu-core-request 1.0 --run-as-user --existing-pvc claimname=<pvc-name>,path=/scratch --attach
 ```
 
 Here is a brief rundown of the arguments of the command above:
 
 - `runai workspace submit <workspace-name>` will run a new workspace and give it the name specified in `<workspace-name>`
 
-- `--image sydneyinformaticshub/dgx-interactive-gpu` will run the base Docker image located at `sydneyinformaticshub/dgx-interactive-gpu`, you can replace this image with your own, perhaps built yourself with extra package installs and using this image as a base
+- `--image sydneyinformaticshub/dgx-interactive-terminal` will run the base Docker image located at `sydneyinformaticshub/dgx-interactive-terminal`, you can replace this image with your own, perhaps built yourself with extra package installs and using this image as a base
 
 - `--gpu-devices-request 1 --cpu-core-request 1.0` requests 1 GPU and 1 CPU for the workflow. There are multiple options for selecting GPU and CPU RAM and devices, see [here](https://run-ai-docs.nvidia.com/self-hosted/2.22/reference/cli/runai/runai_workspace_submit) or use `runai wrkspace submit --help` for a full list of options
 
@@ -66,7 +66,7 @@ Using the CLI it is also possible to set up a workflow that persists in the back
 To set this up follow the steps 1 and 2 above, then change the command in step 3 to:
 
 ```bash
-runai workspace submit <workspace-name> --image sydneyinformaticshub/dgx-interactive-gpu --gpu-devices-request 1 --cpu-core-request 1.0 --run-as-user --existing-pvc claimname=<pvc-name>,path=/scratch --command -- bash -c 'trap : TERM INT; sleep infinity & wait'
+runai workspace submit <workspace-name> --image sydneyinformaticshub/dgx-interactive-terminal --gpu-devices-request 1 --cpu-core-request 1.0 --run-as-user --existing-pvc claimname=<pvc-name>,path=/scratch --command -- bash -c 'trap : TERM INT; sleep infinity & wait'
 ```
 
 This will run the workload and keep it persisting in the background. You can then connect to this container whenever you like using:
