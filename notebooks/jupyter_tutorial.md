@@ -6,32 +6,47 @@ Generally, the minimum requirements you need before creating the workload includ
 * Being granted permission to an active project
 * An [environment](environments.md) to run such job
 * Have created a data source, e.g. a PVC, to store your input and output data
-* Understand the compute resources you need to run the job and have the option available under Compute Resources
+* Understand the compute resources you need to run the job and have the option available under "Compute Resources"
 
 In this tutorial, we will create a simple Jupyter Lab workload that allows you to run Jupyter notebooks interactively on the SIH GPU cluster.
 
 ## Step 1: Create a workload
 Navigate to the Workloads section of the platform and click on the "NEW WORKLOAD" button. Select "Workspace" from the dropdown menu.
+
 ![New workload](../fig/workload_create_workspace.png)
 
 ## Step 2: Configure the workload from scratch
-Fill in the necessary details for your workload:
+Define the necessary information for your workload:
 
 * Under "Projects" select the project it will be linked to
-* Under "Templates" select "Start from sratch" (do not use any existing template)
+* Under "Templates" select "Start from sratch" (*i.e.* do not use any existing template)
+* Provide a descriptive name for the workload
+
 ![Project and Template](../fig/workload_definition.png)
-* Under "Environment" select the Jupyter Lab container environment you want to run
+
+* Select an environment to create the container. The SIH team has prepared a [pre-built image](https://hub.docker.com/r/sydneyinformaticshub/dgx-interactive-jupyterlab) (`sydneyinformatics/dgx-interactive-jupyterlab`) with Jupyter Lab and commonly used data science packages installed.
+
 ![Software environment](../fig/workload_environment.png)
-* Under "Compute resource" select the resources required.
+
+* Select the amount of compute resources to run the workload. In this tutorial, we will select the `small-fraction` option that requires 1 H200 GPU with 10% of its memory (~14GB).
+
 ![Compute resource](../fig/workload_comp_resource.png)
 
-There are other optional components you can add to a workload depending on the needs of your task. These include:
+* Configure the [data source](./data_sources.md) to be mounted to the container. Here we select the default PVC created for the project. The mount path inside the container is set to `/scratch/<dashr_project_shortcode>`.
 
-* Volume (i.e. temporary data storage)
-* Data Sources (e.g. PVCs)
-* Other general settings
-![](../fig/workload_additional_setups.png)
+![Data resource](../fig/workload_datasource.png)
 
-## Optional: Create a workload from a template
-Besides the project allocation, all the other workload components can be populated from a pre-defined template:
-![Create workload from existing template](../fig/workload_template.png)
+* Lastly, Click on "CREATE WORKLOAD" to submit the workload to the cluster.
+
+## Step 3: Connect to Jupyter Lab
+
+When the status changes to "Running", you can access the Jupyter Lab interface by selecting "Jupyter" under "CONNECT".
+
+![Connect to the Jupyter Lab interface](../fig/workload_connect_jupyter.png)
+
+## (Optional) Step 4: Inspect system logs
+You can review the system logs to access details about event history, workload metrics, and real-time container output. This information is especially useful for debugging issues when a workload fails to start.
+
+![Workload logs](../fig/workload_logs.png)
+
+
