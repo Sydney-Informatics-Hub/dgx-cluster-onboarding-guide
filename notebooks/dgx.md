@@ -4,7 +4,7 @@ COMING SOON! We expect the SIH GPU cluster to be available for researchers to us
 
 # Introduction to the SIH GPU Cluster
 
-The SIH GPU Cluster is a high-performance computing (HPC) platform designed to accelerate AI and machine learning workloads. It is built on NVIDIA's SIH GPU systems, which are purpose-built for deep learning and AI research. The cluster provides researchers with access to powerful GPUs, high-speed networking, and a robust software stack to facilitate development in AI research and scientific simulations.
+The Sydney Informatics Hub (SIH) GPU Cluster is a high-performance research compute platform designed to accelerate AI workflows, scientific modelling, image processing, and other GPU-intensive research across the University of Sydney. This cluster is built with three NVIDIA DGX H200 nodes (24 H200 GPUs in total), high-speed InfiniBand networking, and 1 PB DDN EXAScaler parallel filesystem for fast shared storage.
 
 More information about the SIH GPU Cluster can be found on the [Sydney Informatics Hub's Research Computing page](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/3579674625/SIH+GPU+Cluster).
 

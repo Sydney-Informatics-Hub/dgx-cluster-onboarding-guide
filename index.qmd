@@ -9,11 +9,12 @@ output:
 :::{.callout-note}
 The SIH GPU Cluster is managed by the [Sydney Informatics Hub](https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html) at the University of Sydney. Contact <sih.info@sydney.edu.au> for more questions.
 :::
-
+This Onboarding Guide is structured as follows:
 
 |  |  |
 | --- | :--- |
 | **Section** | **Content** |
-| Getting Started with the SIH GPU Cluster | Cluster fundamentals |
-| Getting Started with Run:ai | Run:ai fundamentals |
-| How-to Guides | Provide step-by-step instructions |
+| Getting Started with the SIH GPU Cluster | Overview and basic information about the GPU Cluster |
+| Getting Started with Run:ai | Introduction to Run:ai concepts and fundamentals |
+| Run:ai Features | Step-by-step instructions for using various Run:ai features. More details can be found in the [official Run:ai user guide (version 2.18)](https://docs.run.ai/v2.18/Researcher/overview-researcher/) |
+| Tutorials | Practical examples and demonstrations of different use cases |

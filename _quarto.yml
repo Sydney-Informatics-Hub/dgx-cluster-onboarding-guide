@@ -18,28 +18,33 @@ website:
         contents:
         - text: "Introduction to the SIH GPU Cluster"
           href: notebooks/dgx.html
+        - text: "Accessing the SIH GPU Cluster"
+          href: notebooks/access.html
       - section: "Getting Started with Run:ai"
         contents:
         - text: "Login"
           href: notebooks/login.html
         - text: "Navigating the User Interface"
           href: notebooks/user_interface.html
-      - section: "How-to Guides"
+      - section: "Run:ai Features"
         contents:
-        - text: "How to Use the Dashboards"
+        - text: "Dashboards"
           href: notebooks/dashboards.html
-        - text: "How to Manage Projects"
+        - text: "Projects"
           href: notebooks/projects.html
-        - text: "How to Configure Environments"
+        - text: "Environments"
           href: notebooks/environments.html
+        - text: "Data Sources"
+          href: notebooks/data_sources.html
+
+      - section: "Tutorials"
+        contents:
+        - text: "Creating a basic Jupyter Lab workload"
+          href: notebooks/jupyter_tutorial.html
         - text: "How to transfer data to/from the SIH GPU Cluster"
           href: notebooks/data_transfer.html
         - text: "How to run a terminal using the Command Line Interface (CLI)"
           href: notebooks/CLI.html
-      - section: "Tutorials"
-        contents:
-        - text: "Creating a Jupyter Lab Workload"
-          href: notebooks/jupyter_tutorial.html
   cookie-consent: 
     type: express
     style: simple
