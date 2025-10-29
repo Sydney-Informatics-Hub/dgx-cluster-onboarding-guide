@@ -374,7 +374,7 @@ cookieconsent.run({
 </figure>
 </div>
 <ol start="8" type="1">
-<li>In the open terminal app you can now use the rsync command to copy data to/from your project space in RDS.</li>
+<li>In the open terminal app you can now use the sftp command to copy data to/from your project space in RDS.</li>
 </ol>
 <p>To copy data from RDS to the GPU cluster, you can type the following into the open terminal:</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -395,11 +395,10 @@ Note
 <p><code>&lt;path_to_pvc_data&gt;</code>: The path of the data you have stored on the PVC. (e.g.&nbsp;<code>my_dgx_data/workflow_output/</code>)</p>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rlctP</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-int.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>rds_project<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_project_data<span class="op">&gt;</span> <span class="op">&lt;</span>pvc_mount_point<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_pvc_data<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sftp</span> <span class="at">-r</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-ext.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>Project Short ID<span class="op">&gt;</span>/<span class="op">&lt;</span>Path to File or Folder<span class="op">&gt;</span> <span class="op">&lt;</span>pvc_mount_point<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_pvc_data<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>After you execute this command, you will be prompted for the password associated with your unikey to establish a connection to RDS.</p>
 <p>To copy data from the GPU cluster to RDS, reverse the order of source and destination in the above command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rlctP</span> <span class="op">&lt;</span>pvc_mount_point<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_pvc_data<span class="op">&gt;</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-int.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>rds_project<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_project_data<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The above rsync will also perform integrity checking using a <em>checksum</em>, comparing the original and copied files to make sure they are identical.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sftp</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-ext.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>Project Short ID<span class="op">&gt;</span>/<span class="op">&lt;</span>Path to File or Folder<span class="op">&gt;</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">$"put -r &lt;pvc_mount_point&gt;/&lt;path_to_pvc_data&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>During file transfer, for larger files, you can close the browser and leave things running in the background. You can then reconnect to check its status by logging back into the web UI at <a href="https://gpu.sydney.edu.au">gpu.sydney.edu.au</a>.</p>
 
 
