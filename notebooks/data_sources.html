@@ -290,6 +290,15 @@ cookieconsent.run({
 
 <section id="data-sources" class="level1">
 <h1>Data Sources</h1>
+<p>Data sources in Run:ai allow you to connect additional storage systems to your Run:ai projects, enabling seamless access to datasets required for your workloads. Run:ai supports various types of data sources, including PVC (<a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">Persistent Volume Claim</a>), NFS, S3-compatible storage, and more.</p>
+<p>When a Run:ai project is created, a default data source (PVC) is automatically set up for this project. You can find the data source under the “Data Sources”, listed as <code>pvc-&lt;dashr_project_shortcode&gt;</code>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../fig/default_data_source.png" class="img-fluid figure-img"></p>
+<figcaption>Default Data Source</figcaption>
+</figure>
+</div>
+<p>This dedicated persistent storage can be accessable from any workload running within the same project. The default mount path inside the container is <code>/scratch/&lt;dashr_project_shortcode&gt;</code>. It is especially useful for storing intermediate results, model checkpoints, and <a href="../notebooks/data_transfer.html">uploading data to the cluster</a> from external sources (<em>e.g.</em> RDS).</p>
 
 
 </section>

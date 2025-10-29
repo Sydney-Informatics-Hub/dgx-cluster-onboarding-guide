@@ -142,7 +142,7 @@
     "href": "notebooks/jupyter_tutorial.html",
     "title": "Tutorial: Running a Jupyter Lab Workload",
     "section": "",
-    "text": "A workload is the actual job or task you want to run on the platform. This could be training an AI model, and running an inference model and exposing its endpoint, doing data preprocessing, or conducting a scientific simulation.\nGenerally, the minimum requirements you need before creating the workload include:\n\nBeing granted permission to an active project\nAn environment to run such job\nHave created a data source, e.g. a PVC, to store your input and output data\nUnderstand the compute resources you need to run the job and have the option available under Compute Resources\n\nIn this tutorial, we will create a simple Jupyter Lab workload that allows you to run Jupyter notebooks interactively on the SIH GPU cluster.\n\n\nNavigate to the Workloads section of the platform and click on the “NEW WORKLOAD” button. Select “Workspace” from the dropdown menu. \n\n\n\nFill in the necessary details for your workload:\n\nUnder “Projects” select the project it will be linked to\nUnder “Templates” select “Start from sratch” (do not use any existing template) \nUnder “Environment” select the Jupyter Lab container environment you want to run \nUnder “Compute resource” select the resources required. \n\nThere are other optional components you can add to a workload depending on the needs of your task. These include:\n\nVolume (i.e. temporary data storage)\nData Sources (e.g. PVCs)\nOther general settings \n\n\n\n\nBesides the project allocation, all the other workload components can be populated from a pre-defined template:",
+    "text": "A workload is the actual job or task you want to run on the platform. This could be training an AI model, and running an inference model and exposing its endpoint, doing data preprocessing, or conducting a scientific simulation.\nGenerally, the minimum requirements you need before creating the workload include:\n\nBeing granted permission to an active project\nAn environment to run such job\nHave created a data source, e.g. a PVC, to store your input and output data\nUnderstand the compute resources you need to run the job and have the option available under “Compute Resources”\n\nIn this tutorial, we will create a simple Jupyter Lab workload that allows you to run Jupyter notebooks interactively on the SIH GPU cluster.\n\n\nNavigate to the Workloads section of the platform and click on the “NEW WORKLOAD” button. Select “Workspace” from the dropdown menu.\n\n\n\nNew workload\n\n\n\n\n\nDefine the necessary information for your workload:\n\nUnder “Projects” select the project it will be linked to\nUnder “Templates” select “Start from sratch” (i.e. do not use any existing template)\nProvide a descriptive name for the workload\n\n\n\n\nProject and Template\n\n\n\nSelect an environment to create the container. The SIH team has prepared a pre-built image (sydneyinformatics/dgx-interactive-jupyterlab) with Jupyter Lab and commonly used data science packages installed.\n\n\n\n\nSoftware environment\n\n\n\nSelect the amount of compute resources to run the workload. In this tutorial, we will select the small-fraction option that requires 1 H200 GPU with 10% of its memory (~14GB).\n\n\n\n\nCompute resource\n\n\n\nConfigure the data source to be mounted to the container. Here we select the default PVC created for the project. The mount path inside the container is set to /scratch/&lt;dashr_project_shortcode&gt;.\n\n\n\n\nData resource\n\n\n\nLastly, Click on “CREATE WORKLOAD” to submit the workload to the cluster.\n\n\n\n\nWhen the status changes to “Running”, you can access the Jupyter Lab interface by selecting “Jupyter” under “CONNECT”.\n\n\n\nConnect to the Jupyter Lab interface\n\n\n\n\n\nYou can review the system logs to access details about event history, workload metrics, and real-time container output. This information is especially useful for debugging issues when a workload fails to start.\n\n\n\nWorkload logs",
     "crumbs": [
       "Tutorials",
       "Creating a basic Jupyter Lab workload"
@@ -153,7 +153,7 @@
     "href": "notebooks/jupyter_tutorial.html#step-1-create-a-workload",
     "title": "Tutorial: Running a Jupyter Lab Workload",
     "section": "",
-    "text": "Navigate to the Workloads section of the platform and click on the “NEW WORKLOAD” button. Select “Workspace” from the dropdown menu.",
+    "text": "Navigate to the Workloads section of the platform and click on the “NEW WORKLOAD” button. Select “Workspace” from the dropdown menu.\n\n\n\nNew workload",
     "crumbs": [
       "Tutorials",
       "Creating a basic Jupyter Lab workload"
@@ -164,18 +164,29 @@
     "href": "notebooks/jupyter_tutorial.html#step-2-configure-the-workload-from-scratch",
     "title": "Tutorial: Running a Jupyter Lab Workload",
     "section": "",
-    "text": "Fill in the necessary details for your workload:\n\nUnder “Projects” select the project it will be linked to\nUnder “Templates” select “Start from sratch” (do not use any existing template) \nUnder “Environment” select the Jupyter Lab container environment you want to run \nUnder “Compute resource” select the resources required. \n\nThere are other optional components you can add to a workload depending on the needs of your task. These include:\n\nVolume (i.e. temporary data storage)\nData Sources (e.g. PVCs)\nOther general settings",
+    "text": "Define the necessary information for your workload:\n\nUnder “Projects” select the project it will be linked to\nUnder “Templates” select “Start from sratch” (i.e. do not use any existing template)\nProvide a descriptive name for the workload\n\n\n\n\nProject and Template\n\n\n\nSelect an environment to create the container. The SIH team has prepared a pre-built image (sydneyinformatics/dgx-interactive-jupyterlab) with Jupyter Lab and commonly used data science packages installed.\n\n\n\n\nSoftware environment\n\n\n\nSelect the amount of compute resources to run the workload. In this tutorial, we will select the small-fraction option that requires 1 H200 GPU with 10% of its memory (~14GB).\n\n\n\n\nCompute resource\n\n\n\nConfigure the data source to be mounted to the container. Here we select the default PVC created for the project. The mount path inside the container is set to /scratch/&lt;dashr_project_shortcode&gt;.\n\n\n\n\nData resource\n\n\n\nLastly, Click on “CREATE WORKLOAD” to submit the workload to the cluster.",
     "crumbs": [
       "Tutorials",
       "Creating a basic Jupyter Lab workload"
     ]
   },
   {
-    "objectID": "notebooks/jupyter_tutorial.html#optional-create-a-workload-from-a-template",
-    "href": "notebooks/jupyter_tutorial.html#optional-create-a-workload-from-a-template",
+    "objectID": "notebooks/jupyter_tutorial.html#step-3-connect-to-jupyter-lab",
+    "href": "notebooks/jupyter_tutorial.html#step-3-connect-to-jupyter-lab",
     "title": "Tutorial: Running a Jupyter Lab Workload",
     "section": "",
-    "text": "Besides the project allocation, all the other workload components can be populated from a pre-defined template:",
+    "text": "When the status changes to “Running”, you can access the Jupyter Lab interface by selecting “Jupyter” under “CONNECT”.\n\n\n\nConnect to the Jupyter Lab interface",
+    "crumbs": [
+      "Tutorials",
+      "Creating a basic Jupyter Lab workload"
+    ]
+  },
+  {
+    "objectID": "notebooks/jupyter_tutorial.html#optional-step-4-inspect-system-logs",
+    "href": "notebooks/jupyter_tutorial.html#optional-step-4-inspect-system-logs",
+    "title": "Tutorial: Running a Jupyter Lab Workload",
+    "section": "",
+    "text": "You can review the system logs to access details about event history, workload metrics, and real-time container output. This information is especially useful for debugging issues when a workload fails to start.\n\n\n\nWorkload logs",
     "crumbs": [
       "Tutorials",
       "Creating a basic Jupyter Lab workload"
@@ -186,7 +197,7 @@
     "href": "notebooks/data_sources.html",
     "title": "Data Sources",
     "section": "",
-    "text": "Data Sources",
+    "text": "Data Sources\nData sources in Run:ai allow you to connect additional storage systems to your Run:ai projects, enabling seamless access to datasets required for your workloads. Run:ai supports various types of data sources, including PVC (Persistent Volume Claim), NFS, S3-compatible storage, and more.\nWhen a Run:ai project is created, a default data source (PVC) is automatically set up for this project. You can find the data source under the “Data Sources”, listed as pvc-&lt;dashr_project_shortcode&gt;:\n\n\n\nDefault Data Source\n\n\nThis dedicated persistent storage can be accessable from any workload running within the same project. The default mount path inside the container is /scratch/&lt;dashr_project_shortcode&gt;. It is especially useful for storing intermediate results, model checkpoints, and uploading data to the cluster from external sources (e.g. RDS).",
     "crumbs": [
       "Run:ai Features",
       "Data Sources"
