@@ -332,8 +332,8 @@ cookieconsent.run({
 <p>Here we assume you already have set up a <a href="../notebooks/projects.html">project</a> and have some Persistent Volume Claim (PVC) <a href="../notebooks/storage.html">storage</a> available.</p>
 <section id="interactive-data-transfer-tofrom-rds-from-a-web-browser" class="level2">
 <h2 class="anchored" data-anchor-id="interactive-data-transfer-tofrom-rds-from-a-web-browser">Interactive data transfer to/from RDS from a web-browser</h2>
-<p>You can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an <a href="../notebooks/environments.html">environment</a> called <code>interactive_dt</code> for you to do this.</p>
-<p>To run the <code>interactive_dt</code> environment from a template:</p>
+<p>You can easily transfer data between your Persistent Volume Claim (PVC) and RDS from inside the Run:ai web browser interface. We have set up an <a href="../notebooks/environments.html">environment</a> called <code>data-transfer</code> for you to do this.</p>
+<p>To run the <code>data-transfer</code> environment from a template:</p>
 <ol type="1">
 <li><p>Log into the Run:ai dashboard at <a href="https://gpu.sydney.edu.au">gpu.sydney.edu.au</a> and use Okta to login with your credentials via the “CONTINUE WITH SSO” sign in option.</p></li>
 <li><p>Click ‘workloads’ in the left panel and then the blue ‘new workload’ icon in the top left of the workloads screen and select ‘workspace’.</p></li>
@@ -345,8 +345,8 @@ cookieconsent.run({
 </figure>
 </div>
 <ol start="3" type="1">
-<li><p>Select your project from the projects available and select the <code>interactive-data-transfer</code> template and give your workspace a name before clicking with your mouse cursor on CONTINUE.</p></li>
-<li><p>If you have selected the <code>interactive-data-transfer</code> template, you should now have pre-populated the required <code>interactive-dt</code> environment and the <code>data-transfer</code> compute resource fields on the following page. You can double check this now.</p></li>
+<li><p>Select your project from the projects available and select the <code>data-transfer</code> template and give your workspace a name before clicking with your mouse cursor on CONTINUE.</p></li>
+<li><p>If you have selected the <code>data-transfer</code> template, you should now have pre-populated the required <code>data-transfer</code> environment and the <code>data-transfer</code> compute resource fields on the following page. You can double check this now.</p></li>
 <li><p>Expand the <code>Data sources</code> box and select the PVC associated with your project from the list.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
@@ -401,28 +401,6 @@ Note
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rlctP</span> <span class="op">&lt;</span>pvc_mount_point<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_pvc_data<span class="op">&gt;</span> <span class="op">&lt;</span>your_unikey<span class="op">&gt;</span>@research-data-int.sydney.edu.au:/rds/PRJ-<span class="op">&lt;</span>rds_project<span class="op">&gt;</span>/<span class="op">&lt;</span>path_to_project_data<span class="op">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The above rsync will also perform integrity checking using a <em>checksum</em>, comparing the original and copied files to make sure they are identical.</p>
 <p>During file transfer, for larger files, you can close the browser and leave things running in the background. You can then reconnect to check its status by logging back into the web UI at <a href="https://gpu.sydney.edu.au">gpu.sydney.edu.au</a>.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>For early adopters
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Until we have correct user IDs and group IDs for your unikey and project set up in the PVC and the running workflow, you will need to update the permissions of the mounted PVC as root to be able to read/write files from there. To do this:</p>
-<ol type="1">
-<li>Change to root</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> su</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>Use chmod to set read and write for all on your mounted PVC space</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> <span class="at">-R</span> 666 <span class="op">&lt;</span>PVC_mount_point<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You must do these steps BEFORE running the <code>rsync</code> command above.</p>
-</div>
-</div>
 
 
 </section>
