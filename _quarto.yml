@@ -17,7 +17,7 @@ website:
       - section: "Getting Started with the SIH GPU Cluster"
         contents:
         - text: "Introduction to the SIH GPU Cluster"
-          href: notebooks/dgx.html
+          href: notebooks/cluster_intro.html
         - text: "Accessing the SIH GPU Cluster"
           href: notebooks/access.html
       - section: "Getting Started with Run:ai"
