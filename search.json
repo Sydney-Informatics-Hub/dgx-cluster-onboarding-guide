@@ -110,14 +110,14 @@
     ]
   },
   {
-    "objectID": "notebooks/dgx.html",
-    "href": "notebooks/dgx.html",
-    "title": "Introduction to the SIH GPU Cluster",
+    "objectID": "notebooks/data_sources.html",
+    "href": "notebooks/data_sources.html",
+    "title": "Data Sources",
     "section": "",
-    "text": "Important\n\n\n\nCOMING SOON! We expect the SIH GPU cluster to be available for researchers to use in October 2025. Stay tuned for updates from the Sydney Informatics Hub!\n\n\n\nIntroduction to the SIH GPU Cluster\nThe Sydney Informatics Hub (SIH) GPU Cluster is a high-performance research compute platform designed to accelerate AI workflows, scientific modelling, image processing, and other GPU-intensive research across the University of Sydney. This cluster is built with three NVIDIA DGX H200 nodes (24 H200 GPUs in total), high-speed InfiniBand networking, and 1 PB DDN EXAScaler parallel filesystem for fast shared storage.\nMore information about the SIH GPU Cluster can be found on the Sydney Informatics Hub’s Research Computing page.\n\n\nExpressions of Interest\nThe SIH GPU Cluster is currently in its final stages of deployment and is expected to be available for researchers to use in October 2025. If you are interested in using the SIH GPU Cluster for your research projects, please express your interest by filling out the Expression of Interest Form. This will help us gauge demand and plan for user onboarding and support.",
+    "text": "Data Sources\nData sources in Run:ai allow you to connect additional storage systems to your Run:ai projects, enabling seamless access to datasets required for your workloads. Run:ai supports various types of data sources, including PVC (Persistent Volume Claim), NFS, S3-compatible storage, and more.\nWhen a Run:ai project is created, a default data source (PVC) is automatically set up for this project. You can find the data source under the “Data Sources”, listed as pvc-&lt;dashr_project_shortcode&gt;:\n\n\n\nDefault Data Source\n\n\nThis dedicated persistent storage can be accessable from any workload running within the same project. The default mount path inside the container is /scratch/&lt;dashr_project_shortcode&gt;. It is especially useful for storing intermediate results, model checkpoints, and uploading data to the cluster from external sources (e.g. RDS).",
     "crumbs": [
-      "Getting Started with the SIH GPU Cluster",
-      "Introduction to the SIH GPU Cluster"
+      "Run:ai Features",
+      "Data Sources"
     ]
   },
   {
@@ -130,9 +130,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "SIH GPU Cluster Onboarding Guide",
+    "title": "Sydney Informatics Hub (SIH) GPU Cluster Onboarding Guide",
     "section": "",
-    "text": "Note\n\n\n\nThe SIH GPU Cluster is managed by the Sydney Informatics Hub at the University of Sydney. Contact sih.info@sydney.edu.au for more questions.\n\n\nThis Onboarding Guide is structured as follows:\n\n\n\nSection\nContent\n\n\nGetting Started with the SIH GPU Cluster\nOverview and basic information about the GPU Cluster\n\n\nGetting Started with Run:ai\nIntroduction to Run:ai concepts and fundamentals\n\n\nRun:ai Features\nStep-by-step instructions for using various Run:ai features. More details can be found in the official Run:ai user guide (version 2.18)\n\n\nTutorials\nPractical examples and demonstrations of different use cases",
+    "text": "This Onboarding Guide is structured as follows:\n\n\n\nSection\nContent\n\n\nGetting Started with the SIH GPU Cluster\nOverview and basic information about the GPU Cluster\n\n\nGetting Started with Run:ai\nIntroduction to Run:ai concepts and fundamentals\n\n\nRun:ai Features\nStep-by-step instructions for using various Run:ai features. More details can be found in the official Run:ai user guide (version 2.18)\n\n\nTutorials\nPractical examples and demonstrations of different use cases",
     "crumbs": [
       "Home"
     ]
@@ -193,14 +193,14 @@
     ]
   },
   {
-    "objectID": "notebooks/data_sources.html",
-    "href": "notebooks/data_sources.html",
-    "title": "Data Sources",
+    "objectID": "notebooks/cluster_intro.html",
+    "href": "notebooks/cluster_intro.html",
+    "title": "Introduction to the SIH GPU Cluster",
     "section": "",
-    "text": "Data Sources\nData sources in Run:ai allow you to connect additional storage systems to your Run:ai projects, enabling seamless access to datasets required for your workloads. Run:ai supports various types of data sources, including PVC (Persistent Volume Claim), NFS, S3-compatible storage, and more.\nWhen a Run:ai project is created, a default data source (PVC) is automatically set up for this project. You can find the data source under the “Data Sources”, listed as pvc-&lt;dashr_project_shortcode&gt;:\n\n\n\nDefault Data Source\n\n\nThis dedicated persistent storage can be accessable from any workload running within the same project. The default mount path inside the container is /scratch/&lt;dashr_project_shortcode&gt;. It is especially useful for storing intermediate results, model checkpoints, and uploading data to the cluster from external sources (e.g. RDS).",
+    "text": "Introduction to the SIH GPU Cluster\nThe Sydney Informatics Hub (SIH) GPU Cluster is a high-performance research compute platform designed to accelerate AI workflows, scientific modelling, image processing, and other GPU-intensive research across the University of Sydney. This cluster is built with three NVIDIA DGX H200 nodes (24 H200 GPUs in total), high-speed InfiniBand networking, and 1 PB DDN EXAScaler parallel filesystem for fast shared storage.\nMore information about the SIH GPU Cluster can be found on the Sydney Informatics Hub’s Research Computing page.",
     "crumbs": [
-      "Run:ai Features",
-      "Data Sources"
+      "Getting Started with the SIH GPU Cluster",
+      "Introduction to the SIH GPU Cluster"
     ]
   },
   {
@@ -208,7 +208,7 @@
     "href": "notebooks/access.html",
     "title": "Accessing the SIH GPU Cluster",
     "section": "",
-    "text": "Accessing the SIH GPU Cluster\nFor early acccess to the SIH GPU Cluster, please directly contact the Sydney Informatics Hub with the following information:\n\nDashR Research Project Shortcode: Please log in to the DashR portal, click on the project you intend to work on, and locate the Project Short Code. This is essential for linking your compute usage to the correct research allocation.\nBilling Code: This should be the internal billing code associated with your project or department. If you are unsure, please consult your supervisor or finance administrator.\n\n\n\n\n\n\n\nNote\n\n\n\nWork in Progress: Long term project provisioning and access to the SIH GPU Cluster will be streamlined and directly managed on the university’s Researcher Dashboard (DashR).",
+    "text": "Accessing the SIH GPU Cluster\nEarly access to the GPU Cluster is now available. Please follow instructions on this page to submit your request.\nInformation that you will be asked to provide in the access request form includes:\n\nDashR Research Project Shortcode: Please log in to the DashR portal, click on the project you intend to work on, and locate the Project Short Code. This is essential for linking your compute usage to the correct research allocation.\nBilling Code: This should be the internal billing code associated with your project or department. If you are unsure, please consult your supervisor or finance administrator.\n\nYou will receive an email confirmation once your access has been granted, along with the project code and further instructions on how to connect to the SIH GPU Cluster.\n\n\n\n\n\n\nNote\n\n\n\nWork in Progress: Long term project provisioning and access to the SIH GPU Cluster will be streamlined and directly managed on the university’s Researcher Dashboard (DashR).",
     "crumbs": [
       "Getting Started with the SIH GPU Cluster",
       "Accessing the SIH GPU Cluster"
