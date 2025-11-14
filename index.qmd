@@ -1,14 +1,10 @@
 ---
-title: "SIH GPU Cluster Onboarding Guide"
+title: "Sydney Informatics Hub (SIH) GPU Cluster Onboarding Guide"
 output:
   html_document:
     toc: false
     toc_float: false
 ---
-
-:::{.callout-note}
-The SIH GPU Cluster is managed by the [Sydney Informatics Hub](https://www.sydney.edu.au/research/facilities/sydney-informatics-hub.html) at the University of Sydney. Contact <sih.info@sydney.edu.au> for more questions.
-:::
 This Onboarding Guide is structured as follows:
 
 |  |  |
